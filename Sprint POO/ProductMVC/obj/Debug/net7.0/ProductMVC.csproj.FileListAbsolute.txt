@@ -1,0 +1,15 @@
+C:\Users\45811737874\Desktop\ProductMVC\bin\Debug\net7.0\ProductMVC.exe
+C:\Users\45811737874\Desktop\ProductMVC\bin\Debug\net7.0\ProductMVC.deps.json
+C:\Users\45811737874\Desktop\ProductMVC\bin\Debug\net7.0\ProductMVC.runtimeconfig.json
+C:\Users\45811737874\Desktop\ProductMVC\bin\Debug\net7.0\ProductMVC.dll
+C:\Users\45811737874\Desktop\ProductMVC\bin\Debug\net7.0\ProductMVC.pdb
+C:\Users\45811737874\Desktop\ProductMVC\obj\Debug\net7.0\ProductMVC.csproj.AssemblyReference.cache
+C:\Users\45811737874\Desktop\ProductMVC\obj\Debug\net7.0\ProductMVC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\45811737874\Desktop\ProductMVC\obj\Debug\net7.0\ProductMVC.AssemblyInfoInputs.cache
+C:\Users\45811737874\Desktop\ProductMVC\obj\Debug\net7.0\ProductMVC.AssemblyInfo.cs
+C:\Users\45811737874\Desktop\ProductMVC\obj\Debug\net7.0\ProductMVC.csproj.CoreCompileInputs.cache
+C:\Users\45811737874\Desktop\ProductMVC\obj\Debug\net7.0\ProductMVC.dll
+C:\Users\45811737874\Desktop\ProductMVC\obj\Debug\net7.0\refint\ProductMVC.dll
+C:\Users\45811737874\Desktop\ProductMVC\obj\Debug\net7.0\ProductMVC.pdb
+C:\Users\45811737874\Desktop\ProductMVC\obj\Debug\net7.0\ProductMVC.genruntimeconfig.cache
+C:\Users\45811737874\Desktop\ProductMVC\obj\Debug\net7.0\ref\ProductMVC.dll

@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap');
+
+/* reset de propriedades */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    color: grey;
+    background-color: #edeced;
+
+}
+        /**** Configurações genéricas ****/
+
+div.container-grid{
+    width: 80%;
+    max-width: 1200px;
+    min-width: 992px;
+    margin: 0 auto;
+    }
+
+    div.colunas-flex{
+        display: flex;
+        justify-content: space-between;
+        margin: 20px auto;
+    }
+
+
+        /**** CABEÇALHO ****/
+header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: grey;
+}
+
+div.header-flex{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+header h1{
+    color: white;
+    font-weight: 300;
+}
+
+header h1 #logoux{
+    font-weight: 600;
+    font-style: italic;
+}
+
+header nav{
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    
+}
+
+        /****  MAIN  ****/
+
+        /**** SECTION ****/
+
+main .coluna1 .img-lapis{
+    width: 100%;
+    margin: 0 0 20px 0;
+}
+
+main .coluna1{
+    width: 75%;
+    background-color: white;
+}
+
+main .coluna1 h2{
+    margin: 10px 10px;
+}
+
+main .coluna1 p{
+    margin: 20px 10px;
+    line-height: 24px;
+    text-align: justify;
+}
+
+        /**** ARTICLE ***/
+
+main .coluna2{
+    width: 20%;
+}
+
+main .coluna2 article{
+    background-color: white;
+    padding-bottom: 200px;
+    margin-bottom: 20px;
+}
+ 
+        /**** FOOTER ****/
+
+footer{
+    background-color: #727272;
+    padding: 20px;
+}
+
+footer .direitos{
+    padding-left: 20px;
+    color: white;
+    font-size: 12px;
+}

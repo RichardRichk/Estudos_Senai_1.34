@@ -1,0 +1,15 @@
+C:\Users\45811737874\Desktop\Exercicio-Switch_Case\bin\Debug\net7.0\Exercicio-Switch_Case.exe
+C:\Users\45811737874\Desktop\Exercicio-Switch_Case\bin\Debug\net7.0\Exercicio-Switch_Case.deps.json
+C:\Users\45811737874\Desktop\Exercicio-Switch_Case\bin\Debug\net7.0\Exercicio-Switch_Case.runtimeconfig.json
+C:\Users\45811737874\Desktop\Exercicio-Switch_Case\bin\Debug\net7.0\Exercicio-Switch_Case.dll
+C:\Users\45811737874\Desktop\Exercicio-Switch_Case\bin\Debug\net7.0\Exercicio-Switch_Case.pdb
+C:\Users\45811737874\Desktop\Exercicio-Switch_Case\obj\Debug\net7.0\Exercicio-Switch_Case.csproj.AssemblyReference.cache
+C:\Users\45811737874\Desktop\Exercicio-Switch_Case\obj\Debug\net7.0\Exercicio-Switch_Case.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\45811737874\Desktop\Exercicio-Switch_Case\obj\Debug\net7.0\Exercicio-Switch_Case.AssemblyInfoInputs.cache
+C:\Users\45811737874\Desktop\Exercicio-Switch_Case\obj\Debug\net7.0\Exercicio-Switch_Case.AssemblyInfo.cs
+C:\Users\45811737874\Desktop\Exercicio-Switch_Case\obj\Debug\net7.0\Exercicio-Switch_Case.csproj.CoreCompileInputs.cache
+C:\Users\45811737874\Desktop\Exercicio-Switch_Case\obj\Debug\net7.0\Exercicio-Switch_Case.dll
+C:\Users\45811737874\Desktop\Exercicio-Switch_Case\obj\Debug\net7.0\refint\Exercicio-Switch_Case.dll
+C:\Users\45811737874\Desktop\Exercicio-Switch_Case\obj\Debug\net7.0\Exercicio-Switch_Case.pdb
+C:\Users\45811737874\Desktop\Exercicio-Switch_Case\obj\Debug\net7.0\Exercicio-Switch_Case.genruntimeconfig.cache
+C:\Users\45811737874\Desktop\Exercicio-Switch_Case\obj\Debug\net7.0\ref\Exercicio-Switch_Case.dll

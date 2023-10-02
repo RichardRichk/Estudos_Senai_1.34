@@ -1,0 +1,15 @@
+C:\Users\45811737874\Desktop\exercicios\Exercicio-2\bin\Debug\net7.0\Exercicio-2.exe
+C:\Users\45811737874\Desktop\exercicios\Exercicio-2\bin\Debug\net7.0\Exercicio-2.deps.json
+C:\Users\45811737874\Desktop\exercicios\Exercicio-2\bin\Debug\net7.0\Exercicio-2.runtimeconfig.json
+C:\Users\45811737874\Desktop\exercicios\Exercicio-2\bin\Debug\net7.0\Exercicio-2.dll
+C:\Users\45811737874\Desktop\exercicios\Exercicio-2\bin\Debug\net7.0\Exercicio-2.pdb
+C:\Users\45811737874\Desktop\exercicios\Exercicio-2\obj\Debug\net7.0\Exercicio-2.csproj.AssemblyReference.cache
+C:\Users\45811737874\Desktop\exercicios\Exercicio-2\obj\Debug\net7.0\Exercicio-2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\45811737874\Desktop\exercicios\Exercicio-2\obj\Debug\net7.0\Exercicio-2.AssemblyInfoInputs.cache
+C:\Users\45811737874\Desktop\exercicios\Exercicio-2\obj\Debug\net7.0\Exercicio-2.AssemblyInfo.cs
+C:\Users\45811737874\Desktop\exercicios\Exercicio-2\obj\Debug\net7.0\Exercicio-2.csproj.CoreCompileInputs.cache
+C:\Users\45811737874\Desktop\exercicios\Exercicio-2\obj\Debug\net7.0\Exercicio-2.dll
+C:\Users\45811737874\Desktop\exercicios\Exercicio-2\obj\Debug\net7.0\refint\Exercicio-2.dll
+C:\Users\45811737874\Desktop\exercicios\Exercicio-2\obj\Debug\net7.0\Exercicio-2.pdb
+C:\Users\45811737874\Desktop\exercicios\Exercicio-2\obj\Debug\net7.0\Exercicio-2.genruntimeconfig.cache
+C:\Users\45811737874\Desktop\exercicios\Exercicio-2\obj\Debug\net7.0\ref\Exercicio-2.dll

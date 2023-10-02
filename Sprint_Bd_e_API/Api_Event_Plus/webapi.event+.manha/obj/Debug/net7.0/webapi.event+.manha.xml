@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>webapi.event+.manha</name>
+    </assembly>
+    <members>
+        <member name="T:webapi.event_.manha.Migrations.Db_Event">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.event_.manha.Migrations.Db_Event.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.event_.manha.Migrations.Db_Event.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.event_.manha.Migrations.Db_Event.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

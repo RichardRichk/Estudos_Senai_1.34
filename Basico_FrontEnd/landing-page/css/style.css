@@ -1,0 +1,333 @@
+/******Imports******/
+@font-face {
+    font-family: "Bebas-Neue";
+    src: url(../assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Open-Sans";
+    src: url(../Assets/Fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
+}
+
+
+/******RESET******/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #080324;
+    color: white;
+}
+
+html, body{
+    height: 100%;
+}
+
+
+/******Classes Genéricas******/
+
+.layout-grid{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+            /******HEADER******/
+header{
+    height: 60px;
+    background-color: #F9003D;
+}
+
+header .header-flex{
+    height: 100%;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
+}
+
+/******LINKS******/
+
+header nav a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-family: "Bebas-Neue";
+    letter-spacing: 1px;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+header #menu-mobile{
+    display: none;
+}
+
+header nav a:hover{
+    text-shadow: 0px 0px 6px rgba(249, 0, 61, 0.2);
+    background-color: white ;
+    color: #F9003D;
+}
+
+            /******MAIN******/
+
+/******Banner Principal******/
+
+main .banner{
+    height: 740px;
+    background-image: url(../Assets/images/imagem-fundo-banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative;
+}
+
+main .banner .mouse-icon{
+    position: absolute;
+    bottom: 62px;
+}
+
+main .banner .title-banner{
+    color: white;
+    
+}
+
+main .banner .title-banner h1{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #FFAF00;
+    max-width: 545px;
+    text-transform: uppercase;
+    font-family: "Bebas-Neue";
+    font-size: 96px;
+}
+
+main .banner .title-banner p{
+    color: #F9003D;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 53px;
+    font-weight: bold;
+    margin-top: 29px;
+}
+
+/******Banner About******/
+
+main .about{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: #080324;
+    position: relative;
+}
+
+/******Title About******/
+
+main .about .title-about h2{
+    font-family: "Bebas-Neue";
+    font-size: 64px;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #F9003D;
+    margin-top: 64px;
+}
+
+main .about .img-about{
+    margin-top: 64px;
+    margin-bottom: 119px;
+}
+
+/******Content About******/
+
+main .about .content-about{
+    max-width: 600px;
+    position: absolute;
+    top: 205px;
+    right: 120px;
+}
+
+main .about .content-about span{
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;      
+    font-weight: bold;
+}
+
+
+main .about .content-about h3{
+    color: #FFAF00;
+    font-family: "Bebas-Neue";
+    font-size: 64px;
+}
+
+main .about .content-about p{
+    color: white;
+    font-family: "Open-Sans";
+    font-size: 18px;
+}
+
+/******Section INFO******/
+
+main .info{
+    background-image: url(../Assets/images/imagem-fundo-info.png);
+    background-size: cover;
+}
+
+main .info .content-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .info .content-info article h2{
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+main .info .content-info p{
+    color: #A259F7;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 33px 38px;
+    border: 1px solid #A259F7;
+    margin-bottom: 3px;
+}
+
+/******FOOTER******/
+
+footer .footer-edition{
+    background-image: url(../Assets/images/imagem-fundo-endereco.png);    
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .footer-content h2{
+    color: #FFAF00;
+    font-family: "Bebas-Neue";
+    font-size: 64px;
+    font-weight: normal;
+    margin-top: 82px;
+}
+
+footer .footer-content p{
+    color: #A259F7;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    padding: 57.46px 398px 57.43px 66px;
+    font-weight: normal;
+    border: 1px solid #340B65;
+    background-color: #010010;
+}
+
+footer .footer-content{
+    margin-bottom: 144.12px;
+    margin-top: 36.75px;
+    position: relative;
+}
+
+footer .footer-content .img-mapa{
+    position: absolute;
+    right: 64px;
+    bottom: 30px;;
+}
+
+footer .copyright{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-color: red;
+}
+
+footer .copyright p{
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: normal;
+    padding: 28px;
+}
+
+
+
+/****** MEDIA QUERIES ******/
+
+/* tablets >= 768px ate 991px*/
+@media screen and (max-width: 991px) {
+    
+}
+
+/* smartphone >= 0px ate 767px*/
+@media screen and (max-width: 767px) {
+
+    .mostrarMenu {
+        left: 0;
+        opacity: 1;
+    }
+
+    /******Temporariamente off******/
+    main,
+    footer
+    {
+        display: none;
+    }
+
+    header #menu-mobile{
+        display: block;
+    }
+
+    header nav{
+        position: fixed;
+        top: 60px;
+        left: -80vw;
+        width: 80vw; /*viewport width*/
+        height: calc(100% - 60px);
+        background-color: #F9003D;
+        flex-direction: column;
+        justify-content: space-evenly;
+        opacity: 0;
+        transition: left 0.5s, opacity 0.7s
+    }
+
+    header nav a{
+        border-left: 2px dotted #ffffff;
+    }
+}
+    /******BANNER******/
+    main .banner{
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 80px;
+    }
+   
+    main .banner .title-banner h1{
+        font-size: 40px;
+        text-align: justify;
+        max-width: 260px;
+    }
+    main .banner .title-banner p{
+        max-width: 355px;
+    }
+
+    article .mouse-icon{
+        display: none;
+    }

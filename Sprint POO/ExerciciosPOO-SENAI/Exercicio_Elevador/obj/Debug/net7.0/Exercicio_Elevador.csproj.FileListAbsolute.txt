@@ -1,0 +1,15 @@
+C:\Users\45811737874\Desktop\ExerciciosPOO-SENAI\Exercicio_Elevador\bin\Debug\net7.0\Exercicio_Elevador.exe
+C:\Users\45811737874\Desktop\ExerciciosPOO-SENAI\Exercicio_Elevador\bin\Debug\net7.0\Exercicio_Elevador.deps.json
+C:\Users\45811737874\Desktop\ExerciciosPOO-SENAI\Exercicio_Elevador\bin\Debug\net7.0\Exercicio_Elevador.runtimeconfig.json
+C:\Users\45811737874\Desktop\ExerciciosPOO-SENAI\Exercicio_Elevador\bin\Debug\net7.0\Exercicio_Elevador.dll
+C:\Users\45811737874\Desktop\ExerciciosPOO-SENAI\Exercicio_Elevador\bin\Debug\net7.0\Exercicio_Elevador.pdb
+C:\Users\45811737874\Desktop\ExerciciosPOO-SENAI\Exercicio_Elevador\obj\Debug\net7.0\Exercicio_Elevador.csproj.AssemblyReference.cache
+C:\Users\45811737874\Desktop\ExerciciosPOO-SENAI\Exercicio_Elevador\obj\Debug\net7.0\Exercicio_Elevador.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\45811737874\Desktop\ExerciciosPOO-SENAI\Exercicio_Elevador\obj\Debug\net7.0\Exercicio_Elevador.AssemblyInfoInputs.cache
+C:\Users\45811737874\Desktop\ExerciciosPOO-SENAI\Exercicio_Elevador\obj\Debug\net7.0\Exercicio_Elevador.AssemblyInfo.cs
+C:\Users\45811737874\Desktop\ExerciciosPOO-SENAI\Exercicio_Elevador\obj\Debug\net7.0\Exercicio_Elevador.csproj.CoreCompileInputs.cache
+C:\Users\45811737874\Desktop\ExerciciosPOO-SENAI\Exercicio_Elevador\obj\Debug\net7.0\Exercicio_Elevador.dll
+C:\Users\45811737874\Desktop\ExerciciosPOO-SENAI\Exercicio_Elevador\obj\Debug\net7.0\refint\Exercicio_Elevador.dll
+C:\Users\45811737874\Desktop\ExerciciosPOO-SENAI\Exercicio_Elevador\obj\Debug\net7.0\Exercicio_Elevador.pdb
+C:\Users\45811737874\Desktop\ExerciciosPOO-SENAI\Exercicio_Elevador\obj\Debug\net7.0\Exercicio_Elevador.genruntimeconfig.cache
+C:\Users\45811737874\Desktop\ExerciciosPOO-SENAI\Exercicio_Elevador\obj\Debug\net7.0\ref\Exercicio_Elevador.dll
