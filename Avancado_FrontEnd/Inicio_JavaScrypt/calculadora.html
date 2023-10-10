@@ -19,7 +19,8 @@
 
     <label for="n2">Segundo Numero</label>
     <input type="number" id="n2">
-    <br><br>
+
+    <p>Resultado: <strong id="result"></strong></p>
 
     <label for="operacao">Operacao</label>
     <select id="operacao">
@@ -35,56 +36,7 @@
 </form>
 
 
-<script>
-    function calcular(){//soma
-        event.preventDefault();//parar o submit do formulario
-
-        let n1 = parseFloat(document.getElementById(`n1`).value);
-        let n2 = parseFloat(document.getElementById(`n2`).value);
-        let op = document.getElementById('operacao').value;
-        let resultado;
-
-        switch (op) {
-            case '+':
-                resultado = somar(n1,n2)
-                break;
-            case '-':
-                resultado = subtrair(n1,n2)
-                break;
-            case '/':
-                resultado = divisao(n1,n2)
-                break;
-            case '*':
-                resultado = multiplicacao(n1,n2)
-                break;
-        
-            default:
-                alert(`A operacao nao foi selecionada!`)
-                break;
-        }        
-
-        alert(`resultado = ${resultado}`)    
-    }
-
-    function subtrair(n1, n2) {
-        
-        return n1 - n2;
-        
-    }
-
-    function somar(n1, n2){
-        return n1 + n2;
-    }
-
-    function multiplicacao(n1, n2){
-        return n1 * n2;
-    }
-
-    function divisao(n1, n2){
-        return n1 / n2;
-    }
-
-</script>
+<script src="./scripts/calculadora.js"></script>
 
     
 </body>
