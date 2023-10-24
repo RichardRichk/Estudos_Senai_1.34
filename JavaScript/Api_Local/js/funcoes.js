@@ -2,7 +2,7 @@ const urlViaCep = `https://viacep.com.br/ws`;
 const urlViaCepProfessor = `http://172.16.35.155:3000/myceps`;
 const urlViaContatoProfessor = `http://172.16.35.155:3000/Contato`;
 
-function cadastrar(e) {
+async function cadastrar(e) {
     e.preventDefault();
     
     const nome = document.getElementById(`nome`).value.Trim();

@@ -1,29 +1,21 @@
-
-    //array vazio
-const arrFrutas = [];//array global
-
-function cadastrarfrutas(e) {
+const arrFrutas = []
+function cadastrar(e) {
     e.preventDefault();
 
+    const fruta = document.getElementById('fruta').value;
+    fruta.trim();
+    fruta.toLowerCase();
 
-const fruta = document.getElementById('fruta').value;
-fruta.trim();
-fruta.toLowercase();
+    arrFrutas.push(fruta);
 
-arrFrutas.push(fruta);
-arrFrutas.sort();//ordena o array
+    arrFrutas.sort();
+    let template = "<ul>";
 
-console.log(arrFrutas)
+    arrFrutas.forEach(fruta => {
+        template += `<li>${fruta}</li>`;
+    });
 
-let template = "<ul>";
+    template += "</ul>";
 
-    //   let textoQualquer = []
-arrFrutas.forEach((fruta) => {//preenche ou acumula valores na sttring
-    template += `
-        
-            <li>${p.fruta}</li>`;
-  });
-  template += "</ul>"
-
-  document.getElementById('listarfrutas').innerHTML = template;
+    document.getElementById("listaFrutas").innerHTML = template;
 }

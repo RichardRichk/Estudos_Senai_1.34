@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -5,30 +6,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>listagem de frutas</title>
+    <title>Document</title>
 </head>
 
 <body>
-    <main>
+    <form onsubmit="cadastrar(event)">
+        <label for="fruta"></label>
+        <input type="text" id="fruta" placeholder="digite a fruta">
+
+        <button>Cadastrar</button>
+    </form>
     
-            <form method="post" onsubmit="cadastrar(frutas)">
-                <div class="campo-form">
-                    <label for="nomeFruta">NomeFruta</label>
-                    <input type="text" name="campo-nome" id="nomeFruta" placeholder="Insira o nome da fruta">
-                     <button type="submit">cadastrar</button>
-                </div>
-                   
-                
-                <div id="listadefrutas"></div>
-                <section>
-                    <ul id="listarfrutas"></ul>
-                </section>
-                <script src="frutas.js"></script>
-            </form>
-    </main>
+    <div id="listaFrutas"></div>
 
     <script src="js/functions.js"></script>
-
 </body>
 
 </html>
