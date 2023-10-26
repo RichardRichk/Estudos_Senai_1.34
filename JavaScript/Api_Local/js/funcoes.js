@@ -5,13 +5,13 @@ const urlViaContatoProfessor = `http://172.16.35.155:3000/Contato`;
 async function cadastrar(e) {
     e.preventDefault();
     
-    const nome = document.getElementById(`nome`).value.Trim();
-    const email = document.getElementById(`email`).value.Trim();
-    const cep = document.getElementById(`cep`).value.Trim();
-    const endereco = document.getElementById(`endereco`).value.Trim();
-    const cidade = document.getElementById(`cidade`).value.Trim();
-    const estado = document.getElementById(`estado`).value.Trim();
-    const numero = document.getElementById(`numero`).value.Trim();
+    const nome = document.getElementById(`nome`).value.trim();
+    const email = document.getElementById(`email`).value.trim();
+    const cep = document.getElementById(`cep`).value.trim();
+    const endereco = document.getElementById(`endereco`).value.trim();
+    const cidade = document.getElementById(`cidade`).value.trim();
+    const estado = document.getElementById(`estado`).value.trim();
+    const numero = document.getElementById(`numero`).value.trim();
 
     // if (validaForm(nome, endereco, cep)) {
     //     alert(`Preencha todos os campos`)
@@ -48,11 +48,11 @@ async function cadastrar(e) {
 
 
 async function buscarEndereco(cep){
-    // const resources = `/${cep}/json/`
+    const resources = `/${cep}/json/`
 
     try{
-        // const promise = await fetch(urlViaCep + resources);
-        const promise = await fetch(`${urlViaCepProfessor}/${cep}`);
+        const promise = await fetch(urlViaCep + resources);
+        // const promise = await fetch(`${urlViaCepProfessor}/${cep}`);
 
         const endereco = await promise.json();
 
