@@ -6,7 +6,8 @@ import Footer from '../../componentes/Footer/Footer';
 const TipoEventosPage = () => {
     return (
         <div>
-            <Titulo/>
+            
+            <h1>Titulo Eventos</h1>
         </div>
     );
 };

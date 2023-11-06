@@ -6,7 +6,8 @@ import Footer from '../../componentes/Footer/Footer';
 const LoginPage = () => {
     return (
         <div>
-            <Titulo/>
+
+            <h1>Login</h1>
         </div>
     );
 };

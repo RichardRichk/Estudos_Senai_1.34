@@ -14,7 +14,7 @@ import Footer from "./componentes/Footer/Footer";
 const Rotas = () => {
   return (
     <BrowserRouter>
-    {/* <Header /> */}
+    <Header />
       <Routes>
         <Route element={<HomePage/>} path={"/"} exact/>
         <Route element={<EventosPage/>} path={"/eventos"}/>
@@ -22,7 +22,7 @@ const Rotas = () => {
         <Route element={<LoginPage/>} path={"/login"}/>
         <Route element={<TestePage/>} path={"/teste"}/>
       </Routes>
-    {/* <Footer /> */}
+    <Footer />
     </BrowserRouter>
   );
 };

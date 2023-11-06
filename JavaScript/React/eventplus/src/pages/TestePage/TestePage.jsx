@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from '../../componentes/Button/Button';
 import Input from '../../componentes/Input/Input';
+import Titulo from '../../componentes/Titulo/Titulo';
 import Header from '../../componentes/Header/Header';
 import Footer from '../../componentes/Footer/Footer';
 
@@ -18,6 +19,7 @@ const TestePage = () => {
 
     return (
         <>
+
             <h1>Página de Poc's</h1>
             <h2>Calculadora</h2>
 
