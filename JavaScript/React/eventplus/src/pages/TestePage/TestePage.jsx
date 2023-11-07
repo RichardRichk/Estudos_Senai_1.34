@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from '../../componentes/Button/Button';
 import Input from '../../componentes/Input/Input';
-import Titulo from '../../componentes/Titulo/Titulo';
+import Title from '../../componentes/Title/Title';
 import Header from '../../componentes/Header/Header';
 import Footer from '../../componentes/Footer/Footer';
 

@@ -1,13 +1,15 @@
 import React from 'react';
-import Titulo from '../../componentes/Titulo/Titulo';
+import Title from '../../componentes/Title/Title';
 import Header from '../../componentes/Header/Header';
 import Footer from '../../componentes/Footer/Footer';
 
 const LoginPage = () => {
     return (
         <div>
-
-            <h1>Login</h1>
+            <Title
+                titleText="Login"
+                className='margem_acima'
+            />
         </div>
     );
 };

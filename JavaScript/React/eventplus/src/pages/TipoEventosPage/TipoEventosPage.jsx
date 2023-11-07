@@ -1,13 +1,15 @@
 import React from 'react';
-import Titulo from '../../componentes/Titulo/Titulo';
+import Title from '../../componentes/Title/Title';
 import Header from '../../componentes/Header/Header';
 import Footer from '../../componentes/Footer/Footer';
 
 const TipoEventosPage = () => {
     return (
         <div>
-            
-            <h1>Titulo Eventos</h1>
+            <Title
+                titleText="Tipos Evento"
+                className='margem_acima'
+            />
         </div>
     );
 };
