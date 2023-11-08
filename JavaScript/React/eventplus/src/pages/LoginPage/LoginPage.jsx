@@ -1,15 +1,13 @@
 import React from 'react';
-import Title from '../../componentes/Title/Title';
-import Header from '../../componentes/Header/Header';
-import Footer from '../../componentes/Footer/Footer';
+import Header from '../../components/Header/Header';
+import Title from '../../components/Titulo/Titulo';
+import './LoginPage.css';
 
 const LoginPage = () => {
     return (
         <div>
-            <Title
-                titleText="Login"
-                className='margem_acima'
-            />
+            <Header/>
+            <Title  titleText={"Login"} className = "margem_acima"/>
         </div>
     );
 };

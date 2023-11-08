@@ -1,15 +1,15 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
 import Title from '../../components/Titulo/Titulo';
-import './EventosPage.css';
+import './TipoEventos.css';
 
-const EventosPage = () => {
+const TipoEventos = () => {
     return (
         <div>
             <Header />
-            <Title  titleText={"Eventos Page"} className = "margem_acima"/>
+            <Title  titleText={"Tipo Evento Page "} className = "margem_acima"/>
         </div>
     );
 };
 
-export default EventosPage;
+export default TipoEventos;

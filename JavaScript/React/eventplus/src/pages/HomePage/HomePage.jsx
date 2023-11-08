@@ -1,16 +1,92 @@
 import React from 'react';
-import Header from '../../componentes/Header/Header';
-import Title from '../../componentes/Title/Title';
-import Footer from '../../componentes/Footer/Footer';
-import Banner from '../../componentes/Banner/Banner';
-import MainContent from '../../componentes/Main/MainContent';
-import VisionSection from '../../componentes/VisionSection/VisionSection';
+import './HomePage.css';
+import Header from '../../components/Header/Header';
+import Title from '../../components/Titulo/Titulo';
+import Banner from '../../components/Banner/Banner';
+import MainContent from '../../components/Main/MainContent'
+import VisionSection from '../../components/VisionSection/VisionSection';
+import ContactSection from '../../components/ContactSection/ContactSection';
+import Container from '../../components/Container/Container';
+import NextEvent from '../../components/NextEvent/NextEvent';
+
 
 const HomePage = () => {
     return (
+        <div>
+            <Header />
+            {/* <Title titleText={"Home Page"} className="margem_acima" /> */}
             <MainContent>
-                <Banner />
+
+            <Banner />
+
+            {/* PROXIMOS EVENTOS */}
+
+                <section className='proximos-eventos'>
+                    <Container>
+                        
+                        <Title titleText={"Proximos Eventos"}/>
+
+                        <div className='events-box'>
+                            <NextEvent 
+                                title={"Evento X"}
+                                decription={"Evento Legal"}
+                                eventDate={"10/11/2024"}
+                                idEvent ={"idEvent"}
+                            />
+                            <NextEvent 
+                                title={"Evento X"}
+                                decription={"Evento Legal"}
+                                eventDate={"10/11/2024"}
+                                idEvent ={"idEvent"}
+                            />
+                            <NextEvent 
+                                title={"Evento X"}
+                                decription={"Evento Legal"}
+                                eventDate={"10/11/2024"}
+                                idEvent ={"idEvent"}
+                            />
+                            <NextEvent 
+                                title={"Evento X"}
+                                decription={"Evento Legal"}
+                                eventDate={"10/11/2024"}
+                                idEvent ={"idEvent"}
+                            />
+                            <NextEvent 
+                                title={"Evento X"}
+                                decription={"Evento Legal"}
+                                eventDate={"10/11/2024"}
+                                idEvent ={"idEvent"}
+                            />
+                            <NextEvent 
+                                title={"Evento X"}
+                                decription={"Evento Legal"}
+                                eventDate={"10/11/2024"}
+                                idEvent ={"idEvent"}
+                            />
+                            <NextEvent 
+                                title={"Evento X"}
+                                decription={"Evento Legal"}
+                                eventDate={"10/11/2024"}
+                                idEvent ={"idEvent"}
+                            />
+                            <NextEvent 
+                                title={"Evento X"}
+                                decription={"Evento Legal"}
+                                eventDate={"10/11/2024"}
+                                idEvent ={"idEvent"}
+                            />
+                        </div>
+
+                    </Container>
+                </section>
+
+                <VisionSection />
+
+                <ContactSection />
+
             </MainContent>
+
+        </div>
     );
 };
 
