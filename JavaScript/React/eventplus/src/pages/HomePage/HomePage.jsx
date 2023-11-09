@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './HomePage.css';
 import Header from '../../components/Header/Header';
 import Title from '../../components/Titulo/Titulo';
@@ -9,8 +9,31 @@ import ContactSection from '../../components/ContactSection/ContactSection';
 import Container from '../../components/Container/Container';
 import NextEvent from '../../components/NextEvent/NextEvent';
 
+import axios from 'axios';
+
+
 
 const HomePage = () => {
+
+    const [nextEvents, setNextEvents] = useState([]); //dados mocados
+    const urlLocal = 'http://localhost:5000/api'
+
+    useEffect(() => {
+        async function getNextEvents() {
+            try {
+                const promise = await axios.get(`${urlLocal}/Evento/ListarProximos`);
+                const dados = await promise.data;
+
+                setNextEvents(dados)//Atualiza o state
+            } catch (error) {
+                alert("oia, deu erro aqui viu")
+            }
+        }
+
+
+        getNextEvents();//roda a funcao
+    },[]);
+
     return (
         <div>
             <Header />
@@ -27,54 +50,21 @@ const HomePage = () => {
                         <Title titleText={"Proximos Eventos"}/>
 
                         <div className='events-box'>
-                            <NextEvent 
-                                title={"Evento X"}
-                                decription={"Evento Legal"}
-                                eventDate={"10/11/2024"}
-                                idEvent ={"idEvent"}
-                            />
-                            <NextEvent 
-                                title={"Evento X"}
-                                decription={"Evento Legal"}
-                                eventDate={"10/11/2024"}
-                                idEvent ={"idEvent"}
-                            />
-                            <NextEvent 
-                                title={"Evento X"}
-                                decription={"Evento Legal"}
-                                eventDate={"10/11/2024"}
-                                idEvent ={"idEvent"}
-                            />
-                            <NextEvent 
-                                title={"Evento X"}
-                                decription={"Evento Legal"}
-                                eventDate={"10/11/2024"}
-                                idEvent ={"idEvent"}
-                            />
-                            <NextEvent 
-                                title={"Evento X"}
-                                decription={"Evento Legal"}
-                                eventDate={"10/11/2024"}
-                                idEvent ={"idEvent"}
-                            />
-                            <NextEvent 
-                                title={"Evento X"}
-                                decription={"Evento Legal"}
-                                eventDate={"10/11/2024"}
-                                idEvent ={"idEvent"}
-                            />
-                            <NextEvent 
-                                title={"Evento X"}
-                                decription={"Evento Legal"}
-                                eventDate={"10/11/2024"}
-                                idEvent ={"idEvent"}
-                            />
-                            <NextEvent 
-                                title={"Evento X"}
-                                decription={"Evento Legal"}
-                                eventDate={"10/11/2024"}
-                                idEvent ={"idEvent"}
-                            />
+
+                            {
+                                nextEvents.map((e) => {
+                                    return (
+                                    <NextEvent 
+                                    key={e.idEvento}
+                                    title={e.nomeEvento}
+                                    decription={e.descricao}
+                                    eventDate={e.dataEvento}
+                                    idEvent ={e.id}
+                                    />
+                                    );
+                                })
+                            }
+
                         </div>
 
                     </Container>
