@@ -9,19 +9,18 @@ import ContactSection from '../../components/ContactSection/ContactSection';
 import Container from '../../components/Container/Container';
 import NextEvent from '../../components/NextEvent/NextEvent';
 
-import axios from 'axios';
+import api from '../../Services/Service';
 
-
+import { nextEventResource } from '../../Services/Service';
 
 const HomePage = () => {
 
     const [nextEvents, setNextEvents] = useState([]); //dados mocados
-    const urlLocal = 'http://localhost:5000/api'
 
     useEffect(() => {
         async function getNextEvents() {
             try {
-                const promise = await axios.get(`${urlLocal}/Evento/ListarProximos`);
+                const promise = await api.get(`${nextEventResource}`);
                 const dados = await promise.data;
 
                 setNextEvents(dados)//Atualiza o state
@@ -59,7 +58,7 @@ const HomePage = () => {
                                     title={e.nomeEvento}
                                     decription={e.descricao}
                                     eventDate={e.dataEvento}
-                                    idEvent ={e.id}
+                                    idEvent ={e.idEvento}
                                     />
                                     );
                                 })
