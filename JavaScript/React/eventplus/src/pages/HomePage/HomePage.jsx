@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './HomePage.css';
-import Header from '../../components/Header/Header';
 import Title from '../../components/Titulo/Titulo';
 import Banner from '../../components/Banner/Banner';
 import MainContent from '../../components/Main/MainContent'
@@ -35,7 +34,6 @@ const HomePage = () => {
 
     return (
         <div>
-            <Header />
             {/* <Title titleText={"Home Page"} className="margem_acima" /> */}
             <MainContent>
 

@@ -13,6 +13,7 @@ const routes = () => {
     return (
         <div>
             <BrowserRouter> 
+                <Header/>
                 <Routes>
                     <Route element={<HomePage />} path="/" exact />
                     <Route element={<LoginPage />} path="/login" />
