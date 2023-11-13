@@ -7,7 +7,7 @@ import EventosPage from './pages/EventosPage/EventosPage';
 import HomePage from './pages/HomePage/HomePage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import TestePage from './pages/TestePage/TestePage';
-import TipoEventos from './pages/TipoEventos/TipoEventos';
+import TipoEventos from './pages/TipoEventosPage/TipoEventosPage';
 
 const routes = () => {
     return (
