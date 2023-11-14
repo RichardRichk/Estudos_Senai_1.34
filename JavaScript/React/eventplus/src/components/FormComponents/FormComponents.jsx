@@ -7,7 +7,7 @@ export const Input = ({
     value,
     name,
     required,
-    additionalClass,
+    additionalClass = "",
     placeholder,
     manipulationFunction
 }) => {
@@ -40,7 +40,7 @@ export const Button = (props) => {
             id={props.id}
             name={props.name}
             type={props.type}
-            className={`${props.additionalClass}`}
+            className={`button-component ${props.additionalClass}`}
             onClick={props.manipulationFunction}
         >
             {props.textButton}
@@ -55,6 +55,7 @@ export const Select = ({
     name,
     options,
     onChange,
+    manipulationFunction,
     additionalClass = "",
     defaultValue
 }) => 
