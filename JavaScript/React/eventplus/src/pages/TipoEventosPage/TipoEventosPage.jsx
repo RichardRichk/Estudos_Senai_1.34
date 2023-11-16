@@ -20,7 +20,7 @@ const TipoEventosPage = () => {
 
     const [titulo, setTitulo] = useState("");
 
-    const [tipoEventos, setTipoEventos] = useState([]);
+    const [tipoEventos, setTipoEventos] = useState([]); //array
 
     useEffect(()=>{
         
@@ -42,7 +42,7 @@ const TipoEventosPage = () => {
 
         // chama a funcao/api no carregamento da pagina/componente
         loadEventsType();
-    }, [])
+    }, [tipoEventos])
 
     async function handleSubmit(e) {
         e.preventDefault(); //Evita o submit do formulario
@@ -66,6 +66,7 @@ const TipoEventosPage = () => {
 
     }
 
+    //Cadastra a atualizacao na api
     function handleUpdate() {
         alert('Bora Editar')
     }
@@ -81,8 +82,23 @@ const TipoEventosPage = () => {
     }
 
     //apaga o tipo de evento na api
-    function handDelete(idElement) {
-        alert(`Vamos aoagar o evento de id: ${idElement}`);
+    async function handDelete(idElement) {
+        
+        //Se nao confirma a exclusao, cancela a acao
+        if (window.confirm(`Deseja apagar ${idElement} ?`)) {
+            
+            try {
+                const promiseRetorno = await api.delete(`${eventsTypeResource}/${idElement}`);
+                if (promiseRetorno.status == 204) {
+                    //setTipoEventos([]); //atualiza a variavel e roda o useState novamente(que da um get na api)
+                }
+    
+            } catch (error){
+                alert("Deu ruim no excluir");
+            }
+
+        }
+        
     }
 
     return (
