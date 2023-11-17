@@ -10,17 +10,22 @@ import TableTp from './TableTp/TableTp.jsx';
 import tipoEventoImage from '../../assets/images/tipo-evento.svg'
 import { Input, Button } from "../../components/FormComponents/FormComponents.jsx";
 import api, {eventsTypeResource} from "../../Services/Service.js"
+import Notification from '../../components/Notification/Notification';
 
 
 
 const TipoEventosPage = () => {
 
     //state
+
+    const [notifyUser, setNotifyerUser] = useState();
+
     const [frmEdit, setFrmEdit] = useState(false);//esta em modo de edicao
 
     const [titulo, setTitulo] = useState("");
 
     const [tipoEventos, setTipoEventos] = useState([]); //array
+
 
     useEffect(()=>{
         
@@ -42,7 +47,7 @@ const TipoEventosPage = () => {
 
         // chama a funcao/api no carregamento da pagina/componente
         loadEventsType();
-    }, [tipoEventos])
+    }, [])
 
     async function handleSubmit(e) {
         e.preventDefault(); //Evita o submit do formulario
@@ -57,7 +62,17 @@ const TipoEventosPage = () => {
             
             setTitulo("");
 
-            alert("Cadastrado com sucesso");
+            const buscaEventos = await api.get(eventsTypeResource);
+
+                setTipoEventos(buscaEventos.data); //atualiza a variavel e roda o useState novamente(que da um get na api)
+
+            setNotifyerUser({
+                titleNote: "Sucesso",
+                textNote: `${titulo} cadastrado com sucesso`,
+                imgIcon: "Sucess",
+                imgAlt: "Imagem de ilustracai de sucessi.moca segurando um balao com simbolo de confirmacao ok",
+                showMessage: true
+            });
             console.log(promiseRetorno)
 
         } catch (error){
@@ -67,30 +82,49 @@ const TipoEventosPage = () => {
     }
 
     //Cadastra a atualizacao na api
-    function handleUpdate() {
-        alert('Bora Editar')
+    function handleUpdate(e) {
+        e.preventDefault();
+        
     }
 
-    //Cancela a tela/acao de edicao (volta para o form de cadastro)
+    //Cancela a tela/acao de edicao (volta para o form de cadastro) {ESTA SENDO USADA NO PROPRIO COMPONENTE DO BOTAO}
     function editActionAbort() {
-        alert(`Cancelae a tela de edicao de dados`)
+        setFrmEdit(false);
+        setTitulo("");
     }
 
     //mostra o formulario de inscricao
-    function showUpdateForm(){
-        alert(`Vamos mostrar o formulario de edicao`)
+    async function showUpdateForm(idElement){
+        setFrmEdit(true);
+        try {
+            const retorno = await api.get(`${eventsTypeResource}/${idElement}`);
+            setTitulo(retorno.data.titulo);
+        } catch (error) {
+            
+        }
     }
 
     //apaga o tipo de evento na api
-    async function handDelete(idElement) {
+    async function handDelete(idElement, tituloElement) {
         
         //Se nao confirma a exclusao, cancela a acao
-        if (window.confirm(`Deseja apagar ${idElement} ?`)) {
+        if (window.confirm(`Deseja apagar ${tituloElement} ?`)) {
             
             try {
                 const promiseRetorno = await api.delete(`${eventsTypeResource}/${idElement}`);
                 if (promiseRetorno.status == 204) {
-                    //setTipoEventos([]); //atualiza a variavel e roda o useState novamente(que da um get na api)
+
+                    const buscaEventos = await api.get(eventsTypeResource);
+
+                    setTipoEventos(buscaEventos.data); //atualiza a variavel e roda o useState novamente(que da um get na api)
+
+                    setNotifyerUser({
+                        titleNote: "Sucesso",
+                        textNote: `${tituloElement} excluido com sucesso`,
+                        imgIcon: "Sucess",
+                        imgAlt: "Imagem de ilustracai de sucessi.moca segurando um balao com simbolo de confirmacao ok",
+                        showMessage: true
+                    });
                 }
     
             } catch (error){
@@ -101,8 +135,11 @@ const TipoEventosPage = () => {
         
     }
 
+
     return (
         <>
+
+        <Notification {...notifyUser} setNotifyUser={setNotifyerUser} />
             <MainContent>
                 {/* Formulario de cadastro do tipo evento */}
                 <section className="cadastro-evento-section">
@@ -145,7 +182,40 @@ const TipoEventosPage = () => {
                                     </>
                                     : 
                                     //Editar
-                                    (<p>Tela de Edicao</p>)
+                                    <>
+                                        (<p>Tela de Edicao</p>)
+
+                                        <Input 
+                                        id={"Titulo"}
+                                        placeholder={"Titulo"}
+                                        name={"titulo"}
+                                        type={"text"}
+                                        required={"required"}
+                                        value={titulo}
+                                        manipulationFunction={(e) => {
+                                            setTitulo(e.target.value);
+                                        }}
+                                    />
+
+                                    <div className='buttons-editbox'>
+                                        <Button 
+                                            textButton="Atualizar"
+                                            id="Atualizar"
+                                            name="Atualizar"
+                                            type="submit"
+                                            manipulationFunction={handleUpdate}
+                                            additionalClass = "button-component--midle"
+                                        />
+                                        <Button 
+                                            textButton="Cancelar"
+                                            id="Cancelar"
+                                            name="Cancelar"
+                                            type="button"
+                                            manipulationFunction={editActionAbort}
+                                            additionalClass = "button-component--midle"
+                                        />
+                                    </div>
+                                    </>
                                 }
                             </form>
                         </div>
