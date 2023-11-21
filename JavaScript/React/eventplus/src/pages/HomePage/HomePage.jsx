@@ -7,12 +7,15 @@ import VisionSection from '../../components/VisionSection/VisionSection';
 import ContactSection from '../../components/ContactSection/ContactSection';
 import Container from '../../components/Container/Container';
 import NextEvent from '../../components/NextEvent/NextEvent';
+import Notification from '../../components/Notification/Notification';
 
 import api from '../../Services/Service';
 
 import { nextEventResource } from '../../Services/Service';
 
 const HomePage = () => {
+
+    const [notifyUser, setNotifyerUser] = useState();
 
     const [nextEvents, setNextEvents] = useState([]); //dados mocados
 
@@ -24,7 +27,13 @@ const HomePage = () => {
 
                 setNextEvents(dados)//Atualiza o state
             } catch (error) {
-                alert("oia, deu erro aqui viu")
+                setNotifyerUser({
+                    titleNote: "Erro na API",
+                    textNote: `Nao foi possivel carregar os proximos evento... Verifique a sua conexao com a internet`,
+                    imgIcon: "warning",
+                    imgAlt: "Imagem de ilustracai de erro, Cuidado!",
+                    showMessage: true
+                });
             }
         }
 
@@ -34,6 +43,9 @@ const HomePage = () => {
 
     return (
         <div>
+
+            <Notification {...notifyUser} setNotifyUser={setNotifyerUser} />
+
             {/* <Title titleText={"Home Page"} className="margem_acima" /> */}
             <MainContent>
 
