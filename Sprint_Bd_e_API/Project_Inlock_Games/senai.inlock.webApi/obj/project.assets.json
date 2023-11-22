@@ -1645,11 +1645,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\45811737874\\Desktop\\Project_Inlock_Games\\senai.inlock.webApi\\senai.inlock.webApi..csproj",
+      "projectUniqueName": "C:\\Users\\45811737874\\Desktop\\Estudos_Senai_1.34\\Sprint_Bd_e_API\\Project_Inlock_Games\\senai.inlock.webApi\\senai.inlock.webApi..csproj",
       "projectName": "senai.inlock.webApi.",
-      "projectPath": "C:\\Users\\45811737874\\Desktop\\Project_Inlock_Games\\senai.inlock.webApi\\senai.inlock.webApi..csproj",
+      "projectPath": "C:\\Users\\45811737874\\Desktop\\Estudos_Senai_1.34\\Sprint_Bd_e_API\\Project_Inlock_Games\\senai.inlock.webApi\\senai.inlock.webApi..csproj",
       "packagesPath": "C:\\Users\\45811737874\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\45811737874\\Desktop\\Project_Inlock_Games\\senai.inlock.webApi\\obj\\",
+      "outputPath": "C:\\Users\\45811737874\\Desktop\\Estudos_Senai_1.34\\Sprint_Bd_e_API\\Project_Inlock_Games\\senai.inlock.webApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\45811737874\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1714,7 +1714,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

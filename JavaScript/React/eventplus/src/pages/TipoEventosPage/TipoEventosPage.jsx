@@ -68,7 +68,7 @@ const TipoEventosPage = () => {
                 titleNote: "Erro no Titulo",
                 textNote: `${titulo} contem menos de 3 caracteres`,
                 imgIcon: "warning",
-                imgAlt: "Imagem de ilustracai de erro, Cuidado!",
+                imgAlt: "Imagem de ilustracao de erro, Cuidado!",
                 showMessage: true
             })
         }

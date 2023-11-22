@@ -3344,11 +3344,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\45811737874\\Desktop\\Api_Event_Plus\\webapi.event+.manha\\webapi.event+.manha.csproj",
+      "projectUniqueName": "C:\\Users\\45811737874\\Desktop\\Estudos_Senai_1.34\\Sprint_Bd_e_API\\Api_Event_Plus\\webapi.event+.manha\\webapi.event+.manha.csproj",
       "projectName": "webapi.event+.manha",
-      "projectPath": "C:\\Users\\45811737874\\Desktop\\Api_Event_Plus\\webapi.event+.manha\\webapi.event+.manha.csproj",
+      "projectPath": "C:\\Users\\45811737874\\Desktop\\Estudos_Senai_1.34\\Sprint_Bd_e_API\\Api_Event_Plus\\webapi.event+.manha\\webapi.event+.manha.csproj",
       "packagesPath": "C:\\Users\\45811737874\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\45811737874\\Desktop\\Api_Event_Plus\\webapi.event+.manha\\obj\\",
+      "outputPath": "C:\\Users\\45811737874\\Desktop\\Estudos_Senai_1.34\\Sprint_Bd_e_API\\Api_Event_Plus\\webapi.event+.manha\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\45811737874\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3437,7 +3437,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
