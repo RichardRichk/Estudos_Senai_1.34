@@ -16,9 +16,16 @@
 
 /* Tootip */
 
-.custom-tootip {
+.custom-tooltip {
   color: #B51D44 !important;
   background-color: #fff !important;
+}
+
+.event-card__description {
+  font-family: Poppins-Regular;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 25px;
 }
 
 /* Smartphone */

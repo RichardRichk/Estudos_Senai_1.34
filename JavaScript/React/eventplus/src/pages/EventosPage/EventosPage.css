@@ -29,6 +29,14 @@
     /* height: 432px; */
 }
 
+.buttons-editbox {
+    width: 100%; 
+    display: flex; 
+    flex-direction: column;
+    gap: 20px;
+    justify-content: 'space-between';
+}
+
 @media screen and (min-width: 1200px) {
     .cadastro-evento__box {
         justify-content: space-between;
@@ -39,5 +47,9 @@
 
     .btn-cadastrar {
         margin-top: 20px;
+    }
+
+    .buttons-editbox {
+        flex-direction: row;
     }
 }
