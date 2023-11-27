@@ -5,7 +5,7 @@ import MainContent from '../../components/Main/MainContent';
 import Container from '../../components/Container/Container';
 import ImageIllustrator from '../../components/ImageIllustrator/ImageIllustrator';
 import { Input, Button, Select } from '../../components/FormComponents/FormComponents';
-import api, { eventsResource } from "../../Services/Service.js"
+import api, { eventsResource, eventsTypeResource } from "../../Services/Service.js"
 import TableEv from './TableEv/TableEv';
 import Notification from '../../components/Notification/Notification';
 
@@ -19,22 +19,20 @@ const EventosPage = () => {
 
     const [frmEdit, setFrmEdit] = useState(false);//esta em modo de edicao
 
-    const [nome, setNome] = useState("");
+    const [nome, setNome] = useState();
 
-    const [descricao, setDescricao] = useState("");
+    const [descricao, setDescricao] = useState();
 
-    const [instituicao, setInstituicao] = useState("");
+    const [dataEvento, setDataEvento] = useState();
 
-    const [dataEvento, setDataEvento] = useState("");
-
-    const [idEvento, setIdEvento] = useState(null);
+    const [idEvento, setIdEvento] = useState([]);
 
     const [eventos, setEventos] = useState([]); //array
 
-    const [idTipoEvento, setIdTipoEvento] = useState(null);
+    const [idTipoEvento, setIdTipoEvento] = useState();
     const [tipoEvento, setTipoEvento] = useState([]);
 
-    //const idInstituicao = 
+    const idInstituicao = 'e555ff8f-ea4e-4c2b-891d-29ecbbdbc38c';
 
 
 
@@ -46,6 +44,9 @@ const EventosPage = () => {
             try {
                 const retorno = await api.get(eventsResource);
                 setEventos(retorno.data);
+
+                const request = await( await api.get(eventsTypeResource)).data;
+                setTipoEvento(request);
 
                 console.log(retorno.data);
 
@@ -61,14 +62,6 @@ const EventosPage = () => {
         loadEvents();
     }, [])
 
-    function arrayTransform(retornoApi) { //(dePara)
-        let arrayOptions = [];
-        retornoApi.forEach((e) => {
-          arrayOptions.push({ value: e.idTipoEvento, text: e.titulo });
-        });
-        return arrayOptions;
-      }
-
     async function updateAPI() {
         const buscaEventos = await api.get(eventsResource);
 
@@ -77,21 +70,27 @@ const EventosPage = () => {
 
     async function handleSubmit(e) {
         e.preventDefault();
+        if (nome.trim().length < 5) {
 
-        try {
+            setNotifyerUser({
+                titleNote: "Titulo deve Possuir mais de 3 Caracteres",
+                textNote: `Nao foi possivel Cadastrar o ${nome}`,
+                imgIcon: "danger",
+                imgAlt: "Imagem de ilustracai de erro, Warning!",
+                showMessage: true
+            })
+        } else try {
             await api.post(eventsResource, {
-                nomeEvento: nome,
-                dataEvento: dataEvento,
-                descricao: descricao,
-                idTipoEvento: idTipoEvento,
-                idInstituicao: idInstituicao
+
+                "dataEvento": dataEvento,
+                "nomeEvento": nome,
+                "descricao": descricao,
+                "idTipoEvento": idTipoEvento,
+                "idInstituicao": idInstituicao
             });
             setNome("");
             setDescricao("");
             setDataEvento("");
-            setTipoEvento("");
-
-            updateAPI();
 
             setNotifyerUser({
                 titleNote: "Sucesso",
@@ -101,6 +100,9 @@ const EventosPage = () => {
                     "Imagem de ilustracao de sucesso. Moca segurando um balao com simbolo de confirmacao ok",
                 showMessage: true,
             });
+
+            updateAPI();
+            
         } catch (error) {
             setNotifyerUser({
                 titleNote: "Erro",
@@ -154,10 +156,10 @@ const EventosPage = () => {
 
     function editActionAbort() {
         setFrmEdit(false);
+
         setNome(""); //Reseta as variaveis
         setDescricao("");
-        setTipoEvento("");
-        setInstituicao("");
+        setIdEvento("");
         setDataEvento("");
         setIdEvento(null); //Reseta as variaveis
     }
@@ -235,7 +237,7 @@ const EventosPage = () => {
                         />
 
                         <form
-                            className='ftipo-evento'
+                            className='ftipo-evento' onSubmit={frmEdit ? handleUpdate : handleSubmit}
                         >
                             {
                                 !frmEdit ?
@@ -264,20 +266,19 @@ const EventosPage = () => {
                                             }}
                                         />
                                         <Select
-                                            id="TipoEvento"
-                                            name={"tipoEvento"}
+                                            id={"TipoEvento"}
+                                            name={"tipo evento"}
+                                            options={tipoEvento}
                                             required={"required"}
-                                            value={idTipoEvento}
-                                            options={arrayTransform(tipoEvento)}
-                                            manipulationFunction={(e) => {
-                                                setIdTipoEvento(e.target.value);
+                                            manipulationFunction={e => {
+                                                setIdTipoEvento(e.target.value)
                                             }}
                                         />
                                         <Input
                                             id={"DataEvento"}
                                             placeholder={"dd/mm/aaaa"}
                                             name={"dataEvento"}
-                                            type={"Date"}
+                                            type={"date"}
                                             required={"required"}
                                             value={dataEvento}
                                             manipulationFunction={(e) => {
@@ -290,7 +291,7 @@ const EventosPage = () => {
                                             textButton="Cadastrar"
                                             id="Cadastrar"
                                             name="cadastrar"
-                                            type="submit"
+                                            type={"submit"}
                                         />
                                     </>
 
@@ -325,13 +326,12 @@ const EventosPage = () => {
                                             }}
                                         />
                                         <Select
-                                            id="TipoEvento"
-                                            name={"tipoEvento"}
+                                            id={"TipoEvento"}
+                                            name={"tipo evento"}
+                                            options={tipoEvento}
                                             required={"required"}
-                                            options={arrayTransform(tipoEvento)}
-                                            value={idTipoEvento}
-                                            manipulationFunction={(e) => {
-                                                setIdTipoEvento(e.target.value);
+                                            manipulationFunction={e => {
+                                                setIdTipoEvento(e.target.value)
                                             }}
                                         />
                                         <Input
