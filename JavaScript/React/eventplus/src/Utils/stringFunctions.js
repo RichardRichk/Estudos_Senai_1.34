@@ -12,3 +12,8 @@ export const dateFormatDbToView = data => {
     
 
 }
+
+export const dateToView = data => {
+ 
+    return data.slice(0,10)
+}

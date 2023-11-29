@@ -10,6 +10,7 @@ import TableEv from './TableEv/TableEv';
 import Notification from '../../components/Notification/Notification';
 
 import EventoImage from '../../assets/images/evento.svg'
+import { dateToView } from '../../Utils/stringFunctions.js';
 
 const EventosPage = () => {
 
@@ -25,14 +26,15 @@ const EventosPage = () => {
 
     const [dataEvento, setDataEvento] = useState();
 
-    const [idEvento, setIdEvento] = useState([]);
+    const [idEvento, setIdEvento] = useState();
 
     const [eventos, setEventos] = useState([]); //array
 
-    const [idTipoEvento, setIdTipoEvento] = useState([]);
+    const [idTipoEvento, setIdTipoEvento] = useState();
     const [tipoEvento, setTipoEvento] = useState([]);
 
-    const idInstituicao = 'e555ff8f-ea4e-4c2b-891d-29ecbbdbc38c';
+    //const idInstituicao = 'e555ff8f-ea4e-4c2b-891d-29ecbbdbc38c';
+    const idInstituicao = '54715823-86f1-40e6-ae06-79cd252838eb';
 
 
 
@@ -84,6 +86,15 @@ const EventosPage = () => {
                 showMessage: true
             })
         } else try {
+
+            const objetoEvento = {
+                "dataEvento": dataEvento,
+                "nomeEvento": nome,
+                "descricao": descricao,
+                "idTipoEvento": idTipoEvento,
+                "idInstituicao": idInstituicao
+            }
+
             await api.post(eventsResource, {
 
                 "dataEvento": dataEvento,
@@ -107,6 +118,7 @@ const EventosPage = () => {
 
             //Retirar
             console.log(idTipoEvento);
+            console.log(objetoEvento);
 
             updateAPI();
 
@@ -182,8 +194,8 @@ const EventosPage = () => {
             const retorno = await api.get(`${eventsResource}/${idElement}`);
             setNome(retorno.data.nomeEvento);
             setDescricao(retorno.data.descricao);
-            setDataEvento(retorno.data.dataEvento);
-            setIdEvento(retorno.data.idTipoEvento);
+            setDataEvento(dateToView(retorno.data.dataEvento));
+            setIdTipoEvento(retorno.data.idTipoEvento);
 
         } catch (error) {
             setNotifyerUser({
@@ -279,6 +291,7 @@ const EventosPage = () => {
                                             name={"tipo evento"}
                                             options={tipoEvento}
                                             required={"required"}
+                                            defaultValue={idTipoEvento}
                                             manipulationFunction={e => {
                                                 setIdTipoEvento(e.target.value)
                                             }}
@@ -339,6 +352,7 @@ const EventosPage = () => {
                                             name={"tipo evento"}
                                             options={tipoEvento}
                                             required={"required"}
+                                            defaultValue={idTipoEvento}
                                             manipulationFunction={e => {
                                                 setIdTipoEvento(e.target.value)
                                             }}

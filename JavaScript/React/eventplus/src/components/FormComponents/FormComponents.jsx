@@ -69,12 +69,12 @@ export const Select = ({
             onChange={manipulationFunction}
             value={defaultValue}
         >
-            <option value="">Selecione</option>
+            <option value="" hidden >Selecione</option>
 
             {/* options.map(??) */}
             {options.map( (o) => {
                 return (
-                    <option key={o.idTipoEvento} value={o.tipoEvento}>{o.titulo}</option>
+                    <option key={o.idTipoEvento} value={o.idTipoEvento}>{o.titulo}</option>
                 );
             })}
         </select>
