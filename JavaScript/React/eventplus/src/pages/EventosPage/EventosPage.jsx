@@ -29,7 +29,7 @@ const EventosPage = () => {
 
     const [eventos, setEventos] = useState([]); //array
 
-    const [idTipoEvento, setIdTipoEvento] = useState();
+    const [idTipoEvento, setIdTipoEvento] = useState([]);
     const [tipoEvento, setTipoEvento] = useState([]);
 
     const idInstituicao = 'e555ff8f-ea4e-4c2b-891d-29ecbbdbc38c';
@@ -45,8 +45,12 @@ const EventosPage = () => {
                 const retorno = await api.get(eventsResource);
                 setEventos(retorno.data);
 
-                const request = await( await api.get(eventsTypeResource)).data;
+                const request = await (await api.get(eventsTypeResource)).data;
                 setTipoEvento(request);
+
+                //Retirar
+                console.log("TESTE");
+                console.log(request);
 
                 console.log(retorno.data);
 
@@ -101,8 +105,11 @@ const EventosPage = () => {
                 showMessage: true,
             });
 
+            //Retirar
+            console.log(idTipoEvento);
+
             updateAPI();
-            
+
         } catch (error) {
             setNotifyerUser({
                 titleNote: "Erro",
@@ -112,6 +119,7 @@ const EventosPage = () => {
                     "Imagem de ilustracao de erro. Rapaz segurando um balao com simbolo",
                 showMessage: true,
             });
+            console.log(idTipoEvento);
         }
     }
 
@@ -175,6 +183,7 @@ const EventosPage = () => {
             setNome(retorno.data.nomeEvento);
             setDescricao(retorno.data.descricao);
             setDataEvento(retorno.data.dataEvento);
+            setIdEvento(retorno.data.idTipoEvento);
 
         } catch (error) {
             setNotifyerUser({
