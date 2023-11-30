@@ -30,8 +30,8 @@ export const institutionResource = '/Instituicao'
 export const loginResource = '/login'
 
 //Mudar apiPort e localApiUri
-const apiPort = '5000';
-const localApiUri = `http://localhost:${apiPort}/api`;
+const apiPort = '7118';
+const localApiUri = `https://localhost:${apiPort}/api`;
 const externalApiUri = null;
 
 const api = axios.create({

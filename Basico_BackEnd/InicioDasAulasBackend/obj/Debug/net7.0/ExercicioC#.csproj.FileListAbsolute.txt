@@ -1,0 +1,15 @@
+C:\Users\45811737874\Desktop\ExercicioC#\bin\Debug\net7.0\ExercicioC#.exe
+C:\Users\45811737874\Desktop\ExercicioC#\bin\Debug\net7.0\ExercicioC#.deps.json
+C:\Users\45811737874\Desktop\ExercicioC#\bin\Debug\net7.0\ExercicioC#.runtimeconfig.json
+C:\Users\45811737874\Desktop\ExercicioC#\bin\Debug\net7.0\ExercicioC#.dll
+C:\Users\45811737874\Desktop\ExercicioC#\bin\Debug\net7.0\ExercicioC#.pdb
+C:\Users\45811737874\Desktop\ExercicioC#\obj\Debug\net7.0\ExercicioC#.csproj.AssemblyReference.cache
+C:\Users\45811737874\Desktop\ExercicioC#\obj\Debug\net7.0\ExercicioC#.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\45811737874\Desktop\ExercicioC#\obj\Debug\net7.0\ExercicioC#.AssemblyInfoInputs.cache
+C:\Users\45811737874\Desktop\ExercicioC#\obj\Debug\net7.0\ExercicioC#.AssemblyInfo.cs
+C:\Users\45811737874\Desktop\ExercicioC#\obj\Debug\net7.0\ExercicioC#.csproj.CoreCompileInputs.cache
+C:\Users\45811737874\Desktop\ExercicioC#\obj\Debug\net7.0\ExercicioC#.dll
+C:\Users\45811737874\Desktop\ExercicioC#\obj\Debug\net7.0\refint\ExercicioC#.dll
+C:\Users\45811737874\Desktop\ExercicioC#\obj\Debug\net7.0\ExercicioC#.pdb
+C:\Users\45811737874\Desktop\ExercicioC#\obj\Debug\net7.0\ExercicioC#.genruntimeconfig.cache
+C:\Users\45811737874\Desktop\ExercicioC#\obj\Debug\net7.0\ref\ExercicioC#.dll

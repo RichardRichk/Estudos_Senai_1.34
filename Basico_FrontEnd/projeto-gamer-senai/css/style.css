@@ -1,0 +1,870 @@
+/******IMPORTS******/
+
+@font-face {
+    font-family: "Inter";
+    src: url(../Assets/Fonts/Inter/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+@font-face {
+    font-family: "Quicksand";
+    src: url(../Assets/Fonts/Quicksand/Quicksand-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "titilium_web";
+    src: url(../Assets/Fonts/titilium_web/TitilliumWeb-Regular.ttf);
+}
+
+@font-face {
+    font-family: "titilium_web_black";
+    src: url(../Assets/Fonts/titilium_web/TitilliumWeb-Black.ttf);
+}
+
+@font-face {
+    font-family: "titilium_web_bold";
+    src: url(../Assets/Fonts/titilium_web/TitilliumWeb-Bold.ttf);
+}
+
+/******RESET******/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+}
+
+body{
+    color: #ffffff;
+    background-color: #1B1426;
+}
+
+/******Classes Genéricas******/
+
+.layout-grid{
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.mostrar-menu{
+    left: 0 !important;
+}
+
+.mostrar-Menu2{
+    right: 0 !important;
+}
+
+.flex-between-center{ /* flex + justify content + align itens */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* MOBILE FIRST */
+
+/******HEADER******/
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    width: 100vw;
+    height: 60px;
+
+    background-color: #1b1426;
+}
+
+/* HEADER TOP */
+
+header .header-top {
+    display: none;
+}
+
+/* HEADER BOTTOM */
+
+header .header-bottom{
+    height: 100%;
+}
+
+header .header-bottom img.logo{
+    width: 86px;
+}
+
+header .header-bottom nav{
+    position: fixed;
+    top: 60px;
+    left: -80vw;
+    width: 80vw;
+    height: calc(100vh - 60px);
+    padding-bottom: 20px;
+    z-index: 21;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    background-image: linear-gradient(to right bottom, rgba(27, 20, 38, 0.7), rgba(27, 20, 38, 0.4));
+    border: 1px solid white;
+    border-image: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(27, 20, 38, 0.4)) 1;
+    backdrop-filter: blur(45px);
+
+    transition: left 0.4s;
+}
+
+/* Somente links "Filhos diretos" */
+header .header-bottom nav > a{
+    color: white;
+    border-bottom: 2px solid #f9aa01;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Inter";
+    font-weight: normal;
+    font-size: 15px;
+    padding: 30px 0;
+}
+
+header .header-bottom nav > a:hover{
+    background-color: #f9aa01;  
+}
+
+header .header-bottom nav > a:last-of-type {
+    border-bottom: none;
+}
+
+
+/* MENU LATERAL DIREITO - Icones */
+header .header-bottom .menu-usuario{
+    position: fixed; 
+    top: 60px;
+    right: -80vw;
+    width: 20vw;
+    height: calc(45vh - 60px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    background-image: linear-gradient(to right bottom, rgba(27, 20, 38, 0.7), rgba(27, 20, 38, 0.4));
+    border: 1px solid white;
+    border-image: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(27, 20, 38, 0.4)) 1;
+    backdrop-filter: blur(45px);
+
+    transition: right 0.4s;
+
+}
+
+/* Icone de midias sociais - possibilidade position */
+/*header .header-bottom .midias-sociais{
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 100px);
+    width: 200px;
+    height: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}*/ 
+
+header .header-bottom nav .midias-sociais{
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* gap é o espaçamento entre os elementos, funciona em linha e tambem em coluna */
+}
+
+/****** MAIN ******/
+
+/****Banner Principal****/
+
+main{
+    margin-top: 60px;
+}
+
+main .banner{
+    width: 100%;
+    height: 606px;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    background-image: url(../Assets/images/valorant-pergunte-3-scaled\ 1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+main .banner h1{
+    font-family: "titilium_web_black";
+    font-size: 40px;
+    text-shadow: 0 0 7px #fd4255;
+}
+
+main .banner .botao-sobre{
+    width: 171px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9aa01;
+    color: #1b1426;
+    font-family: "titilium_web_bold";
+    font-size: 24px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+
+/* Sessão Jogos mobile */
+main .jogos {
+    width: 100%;
+    height: 590px;
+    background-color: #1B1426;
+}
+
+main .jogos .jogos-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* vertical - column */
+    align-items: center;
+}
+
+/******SESSAO PROGRAMER******/
+main section.programer{
+    background-color: #f9aa01;
+    height: 1500px;
+}
+
+/*titulo programer*/
+main .programer .programer-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding-top: 70px;    
+}
+
+main .programer .programer-title>h2{
+    font-family: "titilium_web_black";
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1B1426;
+}
+
+main .programer .programer-title hr{
+    margin-top: 30px;
+    width: 240px;
+    border: 1px solid #1B1426;
+} /* FIM titulo programer*/
+
+/* Programer info 1 */
+main .programer .programer-content .programer-info-1{
+    position: relative;
+    margin-top: 90px;
+}
+
+main .programer .programer-content .programer-info-1 .programer-text-info-1-1 .img-controle-programer{
+    width: 96px;
+    height: 96px;
+}
+
+main .programer .programer-content .programer-info-1 .programer-text-info-1{
+    position: absolute;
+    top: 131px;
+    left: 110px;
+    height: 300px;
+    width: 230px;
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: 
+    /*Efeito gradiente de dentro da imagem*/
+    linear-gradient(to right bottom, rgba(122, 49, 236, 0.21), rgba(47, 7, 109, 0.83), rgba(82, 35, 90, 1)) padding-box,
+    /*Efeito gradiente de fora da imagem (BORDA)*/ 
+    linear-gradient(to right bottom, rgba(255,255,255,0.97), rgba(27,20,38,0)) border-box;
+    border-image-slice: 1;
+    backdrop-filter: blur(7.5px);
+} /* FIM Programer info 1 */
+
+/* Programer info 2 */
+main .programer .programer-content .programer-info-2{
+    position: relative;
+    top: 112px;
+}
+
+main .programer .programer-content .programer-info-2 .programer-text-info-2-1 .img-pessoa-programer{
+    width: 96px;
+    height: 96px;
+}
+
+main .programer .programer-content .programer-info-2 .programer-text-info-2{
+    position: absolute;
+    top: 128px;
+    left: 0px;
+    height: 300px;
+    width: 230px;
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: 
+    /*Efeito gradiente de dentro da imagem*/
+    linear-gradient(to right bottom, rgba(122, 49, 236, 0.21), rgba(47, 7, 109, 0.83), rgba(82, 35, 90, 1)) padding-box,
+    /*Efeito gradiente de fora da imagem (BORDA)*/ 
+    linear-gradient(to right bottom, rgba(255,255,255,0.97), rgba(27,20,38,0)) border-box;
+    border-image-slice: 1;
+    backdrop-filter: blur(7.5px);
+} /* FIM Programer info 2 */
+
+/* Box de texto programer */
+main .programer .programer-content .programer-info-1 .programer-text-info-1 .programer-text-info-1-1,
+main .programer .programer-content .programer-info-2 .programer-text-info-2 .programer-text-info-2-1
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+main .programer .programer-content .programer-info-1 .programer-text-info-1 .programer-text-info-1-1 h2,
+main .programer .programer-content .programer-info-2 .programer-text-info-2 .programer-text-info-2-1 h2
+{
+    font-family: "titilium_web_black";
+    font-size: 18px;
+    text-transform: uppercase;
+
+    padding-top: 19px;
+}
+
+main .programer .programer-content .programer-info-1 .programer-text-info-1 .programer-text-info-1-1 p,
+main .programer .programer-content .programer-info-2 .programer-text-info-2 .programer-text-info-2-1 p
+{
+    font-family: "quicksand";
+    font-size: 13px;
+    text-align: justify;
+
+    padding: 20px;
+} /* FIM Box de texto programer */
+
+/* Banner noticias */
+main .noticias{
+    /* height: 3645px; */
+    background-image: url(../Assets/images/backgrund_notícias_mobile.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+/* noticias-title */
+main .noticias .noticias-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main .noticias .noticias-title h2{
+    margin-top: 46px;
+
+    font-family:"titilium_web_black";
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+main .noticias .noticias-title hr{
+    margin-top: 30px;
+    width: 204px;
+    border: 1px solid #f9aa01;
+} /* Fim noticias-title */
+
+/*NOTICIAS*/
+main .noticias .noticias-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+main .noticias .noticias-content article{
+    height: 387px;
+    width: 335px;
+    /* background-color: rgba(5, 1, 12, 0.79); */
+    background-image: linear-gradient(to right bottom, rgba(29, 26, 52, 0.34), rgba(5, 1, 12, 0.79));
+    border-radius: 8px;
+    margin-top: 39px;
+}
+
+main .noticias .noticias-content article h3{
+    font-family: "titilium_web_bold";
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-top: 16px;
+    padding: 0 20px;
+}
+
+main .noticias .noticias-content article p{
+    font-family: "quicksand";
+    font-size: 16px;
+    text-align: justify;
+    margin-top: 16px;
+    padding: 0 20px;
+} /* FIM NOTICIAS*/
+
+
+/******FOOTER******/
+footer{
+    padding-top: 60px;
+    padding-bottom: 30px;
+    box-shadow: inset 0 30px 60px rgba(0, 0, 0, 0.8);
+    background-image: url(../Assets/images/backgroung_footer.png);
+    background-position: top;
+    background-size: contain;
+}
+footer .footer-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 1200px;
+}
+
+/*TITULOS FOOTER*/
+footer .footer-top .titulos-footer h3{
+    font-family: "titilium_web_black";
+    font-size: 30px;
+}
+
+footer .footer-top .titulos-footer hr{
+    border: 2px solid #f9aa01;
+    width: 112px;
+} 
+
+/*ABOUT*/
+footer .about{
+    height: 304px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .about > img{
+    width: 110px;
+}
+
+footer .about p{
+    font-family: "quicksand";
+    font-weight: 400;
+    font-size: 14px;
+}
+
+footer .about .midias-sociais-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 25px;
+}
+
+/*Lista LINKS UTEIS*/
+footer .footer-top .menu-footer{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+footer .footer-top .menu-footer li{
+    list-style-type: none;
+    width: 110px;
+    margin-bottom: 15px;
+}
+
+footer .footer-top .menu-footer a{
+    color: white;
+    text-decoration: none;
+    font-family: "titilium_web_bold";
+    font-size: 16px;
+}
+
+footer .footer-top .menu-footer a:before{
+    content: "\2015";
+    margin-right: 10px;
+    color: #f9aa01;
+}
+
+/*CONTATOS*/
+footer .footer-top .contatos{
+    color: white;
+    font-family: "titilium_web_bold";
+    font-size: 16px;
+}
+
+footer .footer-top .contatos p{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+footer .footer-top .contatos p span{
+    color: #f9aa01;
+}
+
+/*NEWSLETTER*/
+footer .footer-top .newsletter input,
+footer .footer-top .newsletter button {
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+footer .footer-top .newsletter input{
+    background-color: transparent;
+    background-image: linear-gradient(to right bottom, rgba(239, 239, 239, .6), rgba(239, 239, 239, .1));
+    backdrop-filter: blur(6px);
+    border: 1px solid white;
+    color: white;
+    padding: 5px 10px;
+    font-family: "titilium_web";
+    font-size: 16px;
+}
+
+footer .footer-top .newsletter input::placeholder{
+    color: white;
+}
+
+footer .footer-top .newsletter button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9aa01;
+    font-family: "titilium_web_bold";
+    font-size: 16px;
+
+}
+
+/******FOOTER BOTTOM******/
+footer .footer-bottom .arrow-to-top{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    margin-top: 95px;
+    margin-bottom: 25px;
+}
+
+footer .footer-bottom>p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "titilium_web";
+    font-size: 16px;
+}
+
+/****** Tablets >= 768px ******/
+@media screen and (min-width: 768px) {}
+
+/****** Desktops >= 1200px ******/
+@media screen and (min-width: 1200px) {
+    .layout-grid {
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    /****** HEADER  ******/
+    header {
+        position: static;
+        height: 140px;
+    }
+
+    /* Header Top */
+
+    header .header-top {
+        /*block = valor default da maioria dos elementos*/
+        display: block;
+        height: 50px;
+        border-bottom: 2px solid #f9aa01;
+    }
+
+    header .header-top .contatos{
+        width: 425px;
+        display: flex;
+        justify-content: space-between;
+        
+        font-family: "Inter";
+        font-size: 14px;
+        font-weight: 400;
+    }
+    
+    header .header-top .contatos > div {
+        gap: 10px;
+    }
+
+    header .header-top .midias-sociais {
+        width: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    /* Esconde elementos desnecessarios para desktop*/
+    header .menu-hamburguer,
+    header .menu-pontinhos,
+    header .header-bottom nav .phone,
+    header .header-bottom nav .email,
+    header .header-bottom nav .midias-sociais {
+        display: none;
+    }
+
+    /*HEADER BOTTOM*/
+
+    header .header-bottom{
+        height: 90px;
+    }
+    
+    header .header-bottom img.logo {
+        width: 200px;
+    }
+    header .header-bottom nav {
+        position: static;
+        width: 440px;
+        height: 50px;
+        flex-direction: row;
+        border: none;
+        padding: 0;
+        align-items: center;
+    }
+
+    header .header-bottom nav > a {
+        border: none;
+        padding: 0;
+        font-size: 14px;
+        color: white;
+    }
+
+    header .header-bottom nav > a:hover{
+        background-color: transparent;
+        color: #f9aa01;
+    }
+
+
+    header .header-bottom .menu-usuario {
+        position: static;
+        flex-direction: row;
+        width: 120px;
+        height: 50px;
+        background-color: transparent;
+        border: none;
+        align-items: center;
+    }
+
+
+    /**** MAIN ****/
+    main {
+        margin-top: 0;
+    }
+
+    /**** Banner ****/
+    main .banner {
+        /*alterar a imagem de fundo*/
+        height: 722px;
+        background-image: url(../Assets/images/banner-background-desktop.png);
+        background-size: cover;
+        background-position: top;
+    }
+
+    main .banner h1{
+        font-size: 80px;
+    }
+
+    /* sessao jogos desktop */
+    main .jogos{
+        height: 500px;
+    }
+
+    main .jogos .jogos-flex{
+        flex-direction: row;
+    }
+
+    main .jogos .jogos-flex img{
+        width: 335px;
+    }
+
+
+    /****** SESSAO PROGRAMER ******/
+    main .programer{
+        height: 1000;
+    }
+
+    main .programer .programer-title>h2{
+        font-size: 40px;
+        margin-top: 85px;
+    }
+
+    main .programer .programer-title>hr{
+        margin-top: 35px;
+    }
+
+    main .programer .programer-content{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+    }
+
+    /*PROGRAMER INFO-1*/
+    main .programer .programer-content .programer-info-1>img{
+        width: 422px;
+        height: 689px;
+    } 
+
+    main .programer .programer-content .programer-info-2>img{
+        width: 521px;
+        height: 692px;
+    }
+
+    main .programer .programer-content .programer-info-1 .programer-text-info-1{
+        position: relative;
+        top: -470px;
+        right: -30px;
+        width: 360px;
+        height: 440px;
+    }
+
+    main .programer .programer-content .programer-info-1 .programer-text-info-1-1 .img-controle-programer{
+        width: 143px;
+        height: 143px;
+    }
+
+    main .programer .programer-content .programer-info-1 .programer-text-info-1-1 h2{
+        font-size: 25px;
+        margin-top: 28px;
+    }
+
+    main .programer .programer-content .programer-info-1 .programer-text-info-1-1 p{
+        font-size: 16px;
+        letter-spacing: 1px;
+        margin-top: 28px;
+    } /*FIM PROGRAMER INFO-1*/
+
+    /*PROGRAMER INFO-2*/
+    main .programer .programer-content .programer-info-2{
+        top: -170px;
+    }
+
+    main .programer .programer-content .programer-info-2 .programer-text-info-2{
+        width: 360px;
+        height: 440px;
+        top: 220px;
+    }
+
+    main .programer .programer-content .programer-info-2 .programer-text-info-2-1 .img-pessoa-programer{
+        width: 143px;
+        height: 143px;
+    }
+
+    main .programer .programer-content .programer-info-2 .programer-text-info-2-1 h2{
+        font-size: 25px;
+        margin-top: 28px;
+    }
+
+    main .programer .programer-content .programer-info-2 .programer-text-info-2-1 p{
+        font-size: 16px;
+        margin-top: 28px;
+    } /*FIM PROGRAMER INFO-2*/
+
+    /******NOTICIAS******/
+    main .noticias{
+        background-image: url(../Assets/images/backgrund_notícias_desktop.png);
+    }
+
+     main .noticias .noticias-content{
+        background-size: cover;
+        flex-direction: column;
+    } 
+
+    main .noticias .noticias-title h2{
+        font-size: 40px;
+    }
+
+    main .noticias .noticias-title hr{
+        width: 408px;
+    }
+
+    main .noticias .noticias-content article{
+        width: 285px;
+    }
+
+    main .noticias .noticias-content article img{
+        width: 285px;
+    }
+
+    main .noticias .noticias-content .noticias-content-top,
+    main .noticias .noticias-content .noticias-content-bottom
+    {
+        display: flex;
+        gap: 42px;
+    }   
+
+    main .noticias .noticias-content .noticias-content-bottom{
+        margin-bottom: 193px;
+    }
+
+
+    /****** FOOTER ******/
+
+    footer .footer-top{
+        height: 520px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    footer .footer-top div{
+        max-width: 289px;
+    }
+
+    /*FOOTER ABOUT*/
+    footer .footer-top .about>img{
+        width: 196px;
+        height: 56px;
+        margin-bottom: 37px;
+    }
+
+    /*FOOTER links uteis*/
+    footer .footer-top .links-uteis .menu-footer{
+        flex-direction: column;
+        margin-top: 45px;
+    }
+
+    /*FOOTER CONTATOS*/
+    footer .footer-top .contatos{
+        height: 257px;
+    }
+
+    footer .footer-top .contatos .titulos-footer{
+        margin-top: -16px;
+    }
+
+    footer .footer-top .contatos>p:first-of-type{
+        margin-top: 45px;
+    }
+
+    /*FOOTER NEWSLETTER*/
+    footer .footer-top .newsletter{
+        min-width: 285px;
+        margin-bottom: 100px;
+    }
+
+    footer .footer-top .newsletter .titulos-footer{
+        margin-bottom: 45px;
+    } /*FIM FOOTER*/
+}

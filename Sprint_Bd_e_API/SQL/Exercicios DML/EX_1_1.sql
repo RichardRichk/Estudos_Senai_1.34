@@ -1,0 +1,24 @@
+USE Ex_1_1CR
+
+INSERT INTO PESSOAS
+VALUES ('Nixon','2323232323');
+
+SELECT * FROM PESSOAS
+
+INSERT INTO Email
+VALUES  (2,'Shura@gmail.com'),(3,'Binario@gmail.com');
+
+INSERT INTO Telefone
+VALUES (2, '40028988'), (3,'11001000')
+
+
+
+
+
+
+
+
+
+SELECT * FROM PESSOAS
+SELECT * FROM Email
+SELECT * FROM Telefone
