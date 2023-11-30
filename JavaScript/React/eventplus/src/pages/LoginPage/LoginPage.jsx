@@ -1,10 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import ImageIllustrator from "../../components/ImageIllustrator/ImageIllustrator";
 import logo from "../../assets/images/logo-pink.svg"
 import { Input, Button } from "../../components/FormComponents/FormComponents";
 import loginImage from "../../assets/images/login.svg";
 import Notification from '../../components/Notification/Notification'
 import api, { loginResource } from "../../Services/Service";
+import { useNavigate } from "react-router-dom";
 
 import "./LoginPage.css"
 import { UserContext, userDecodeToken } from "../../context/AuthContext";
@@ -14,6 +15,12 @@ const LoginPage = () => {
     const [user, setUser] = useState({ email: "adm@adm.com", senha: "" });
     //importando os dados globais do usuario
     const {userData, setUserData} = useContext(UserContext); 
+    const navigate = useNavigate();
+
+
+    useEffect(() => {
+        if(userData.nome) navigate("/")
+      }, [userData]);
 
 
     async function handleSubmit(e) {
@@ -32,6 +39,9 @@ const LoginPage = () => {
                 //Guarda o token globalmente
                 setUserData(userFullToken);
                 localStorage.setItem("token", JSON.stringify(userFullToken));
+
+                //Envia o usuario para a pagina home
+                navigate("/"); 
 
                 setNotifyerUser({
                     titleNote: "Sucesso",

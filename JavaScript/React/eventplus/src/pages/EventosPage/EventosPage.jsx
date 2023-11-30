@@ -49,10 +49,6 @@ const EventosPage = () => {
                 const request = await (await api.get(eventsTypeResource)).data;
                 setTipoEvento(request);
 
-                //Retirar
-                console.log("TESTE");
-                console.log(request);
-
                 console.log(retorno.data);
 
             } catch (error) {
@@ -115,10 +111,6 @@ const EventosPage = () => {
                 showMessage: true,
             });
 
-            //Retirar
-            console.log(idTipoEvento);
-            console.log(objetoEvento);
-
             updateAPI();
 
         } catch (error) {
@@ -130,7 +122,6 @@ const EventosPage = () => {
                     "Imagem de ilustracao de erro. Rapaz segurando um balao com simbolo",
                 showMessage: true,
             });
-            console.log(idTipoEvento);
         }
     }
 
@@ -161,7 +152,6 @@ const EventosPage = () => {
                 editActionAbort();
             }
         } catch (error) {
-            console.log(error);
             setNotifyerUser({
                 titleNote: "Erro",
                 textNote: `erro ao tentar atualizar`,
