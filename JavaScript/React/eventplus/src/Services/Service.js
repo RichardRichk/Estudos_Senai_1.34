@@ -29,6 +29,11 @@ export const institutionResource = '/Instituicao'
  */
 export const loginResource = '/login'
 
+/**
+ * Rota para recurso Login
+ */
+export const myEventosResource = '/PresencasEventos/ListarMinhas'
+
 //Mudar apiPort e localApiUri
 const apiPort = '7118';
 const localApiUri = `https://localhost:${apiPort}/api`;

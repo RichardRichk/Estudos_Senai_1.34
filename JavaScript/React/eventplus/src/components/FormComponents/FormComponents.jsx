@@ -74,7 +74,7 @@ export const Select = ({
             {/* options.map(??) */}
             {options.map( (o) => {
                 return (
-                    <option key={o.idTipoEvento} value={o.idTipoEvento}>{o.titulo}</option>
+                    <option key={Math.random()} value={o.value}>{o.text}</option>
                 );
             })}
         </select>

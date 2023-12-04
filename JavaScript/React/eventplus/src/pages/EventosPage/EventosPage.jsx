@@ -69,6 +69,14 @@ const EventosPage = () => {
         setEventos(buscaEventos.data); //atualiza a variavel e roda o useState novamente(que da um get na api)       
     }
 
+    function dePara(request) {
+        let arrayOptions = [];
+        request.forEach((e) => {
+          arrayOptions.push({ value: e.idTipoEvento, text: e.titulo });
+        });
+        return arrayOptions;
+      }
+
     async function handleSubmit(e) {
         e.preventDefault();
         if (nome.trim().length < 5) {
@@ -277,8 +285,8 @@ const EventosPage = () => {
                                         />
                                         <Select
                                             id={"TipoEvento"}
-                                            name={"tipo evento"}
-                                            options={tipoEvento}
+                                            name={"tipoEvento"}
+                                            options={dePara(tipoEvento)}
                                             required={"required"}
                                             defaultValue={idTipoEvento}
                                             manipulationFunction={e => {
@@ -338,8 +346,8 @@ const EventosPage = () => {
                                         />
                                         <Select
                                             id={"TipoEvento"}
-                                            name={"tipo evento"}
-                                            options={tipoEvento}
+                                            name={"tipoEvento"}
+                                            options={dePara(tipoEvento)}
                                             required={"required"}
                                             defaultValue={idTipoEvento}
                                             manipulationFunction={e => {

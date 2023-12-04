@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import logoMobile from '../../assets/images/logo-white.svg' // Importa a imagem do logotipo para telas móveis
 import logoDesktop from '../../assets/images/logo-pink.svg' // Importa a imagem do logotipo para telas de desktop
 import { Link } from 'react-router-dom'; // Importa o componente Link do react-router-dom
 
 import './Nav.css'; // Importa o arquivo de estilos CSS para o componente Nav
+import { UserContext } from '../../context/AuthContext';
 
 const Nav = ({ exibeNavbar, setExibeNavbar }) => {
+
+    const { userData } = useContext(UserContext);
     
     return (
         <nav className={`navbar ${exibeNavbar ? "exibeNavbar" : ""}`}>
@@ -28,9 +31,22 @@ const Nav = ({ exibeNavbar, setExibeNavbar }) => {
                 {/* Renderiza uma caixa que contém links para diferentes páginas */}
                 
                 <Link to="/" className='navbar__item'>Home</Link> {/* Link para a página inicial */}
-                <Link to="/tipo-eventos" className='navbar__item'>Tipos de Evento</Link> {/* Link para a página de tipos de evento */}
-                <Link to="/testes" className='navbar__item'>Teste</Link> {/* Link para a página de testes */}
-                <Link to="/eventos" className='navbar__item'>Eventos</Link> {/* Link para a página de eventos */}
+
+                {userData.nome && userData.role === "ADM" ? (
+
+                    <>
+                        <Link to="/tipo-eventos" className='navbar__item'>Tipos de Evento</Link> {/* Link para a página de tipos de evento */}
+                        <Link to="/eventos" className='navbar__item'>Eventos</Link> {/* Link para a página de eventos */}
+                    </>
+
+                // <Link to="/testes" className='navbar__item'>Teste</Link> {/* Link para a página de testes */}
+                ) : userData.nome && userData.role === "Cliente" ? (
+
+                    <Link to="/eventos-aluno" className='navbar__item'>Eventos Alunos</Link> /* Link para a página de eventos */
+
+                ): null}
+
+
             </div>
         </nav>
     );
