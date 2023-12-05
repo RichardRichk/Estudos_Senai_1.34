@@ -32,7 +32,7 @@ export const loginResource = '/login'
 /**
  * Rota para recurso Login
  */
-export const myEventosResource = '/PresencasEventos/ListarMinhas'
+export const myEventosResource = '/PresencasEvento/ListarMinhas'
 
 //Mudar apiPort e localApiUri
 const apiPort = '7118';

@@ -7,7 +7,7 @@ import Container from "../../components/Container/Container";
 import { Select } from "../../components/FormComponents/FormComponents";
 import Spinner from "../../components/Spinner/Spinner";
 import Modal from "../../components/Modal/Modal.jsx";
-import api, { eventsResource } from "../../Services/Service";
+import api, { eventsResource, myEventosResource } from "../../Services/Service";
 
 import "./EventosAlunoPage.css";
 import { UserContext } from "../../context/AuthContext";
@@ -26,7 +26,7 @@ const EventosAlunoPage = () => {
     { value: 2, text: "Meus eventos" },
   ]);
 
-  const [tipoEvento, setTipoEvento] = useState(1); //código do tipo do Evento escolhido
+  const [tipoEvento, setTipoEvento] = useState("0"); //código do tipo do Evento escolhido
   const [showSpinner, setShowSpinner] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
@@ -35,30 +35,54 @@ const EventosAlunoPage = () => {
 
   useEffect(() => {
 
-    
+    async function loadEvents(){
 
-    loadEvents();
-  }, [tipoEvento]);
+      // setEventos([]);
+  
+      if (tipoEvento === "1") {//Todos os eventos
+  
+        try {
+          //Listar os eventos (Evento)
+          const retorno = await api.get(eventsResource);
+          setEventos(retorno.data);
+        } catch (error) {
+          console.log("Erro na api");
+          console.log(error);
+        }
+        
+      } else if (tipoEvento === "2"){
 
+        //Listar neys evebtis(PresencasEventos)
+        //Retorna um formato diferente de array
 
-  async function loadEvents(){
+        try {
 
-    setEventos([]);
+          const retornoEventos = await api.get(`${myEventosResource}/${userData.userId}`);
 
-    if (tipoEvento == 1) {
+          const arrEventos = []; //Array vazio
 
-      try {
-        const retorno = await api.get(eventsResource);
-        setEventos(retorno.data);
-      } catch (error) {
-        console.log("Erro na api");
-        console.log(error);
+          retornoEventos.data.forEach(e => {
+
+            arrEventos.push(e.evento);
+
+          });
+
+          setEventos(arrEventos);
+          console.log(retornoEventos.data);
+
+        } catch (error) {
+          
+          console.log("Erro na api");
+          console.log(error);
+
+        }
+      } else {
+        setEventos ([]);
       }
-      
-    } else {
-      
     }
-  }
+    
+    loadEvents();
+  }, [tipoEvento]); //userData.userId
 
 
   // toggle meus eventos ou todos os eventos
@@ -68,6 +92,17 @@ const EventosAlunoPage = () => {
 
   async function loadMyComentary(idComentary) {
     return "????";
+  }
+
+  const verificaPresenca = (arrayAllEvents, eventsUser) => {
+    for (let x = 0; x < arrayAllEvents.length; x++) { //Para cada evento cadastrado
+      for (let i = 0; i < eventsUser.length; i++) { //procurar a correspondencia
+        
+        arrayAllEvents [x].situacao = true;
+        break; //paro de procurar para o evento principal atual
+        
+      }
+    }
   }
 
   const showHideModal = () => {
@@ -93,7 +128,7 @@ const EventosAlunoPage = () => {
             name="tipo-evento"
             required={true}
             options={quaisEventos} // aqui o array dos tipos
-            onChange={(e) => myEvents(e.target.value)} // aqui só a variável state
+            manipulationFunction={(e) => myEvents(e.target.value)} // aqui só a variável state
             defaultValue={tipoEvento}
             additionalClass="select-tp-evento"
           />
