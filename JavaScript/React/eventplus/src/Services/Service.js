@@ -30,9 +30,17 @@ export const institutionResource = '/Instituicao'
 export const loginResource = '/login'
 
 /**
- * Rota para recurso Login
+ * Rota para recurso Listar Minhas Presencas
  */
 export const myEventosResource = '/PresencasEvento/ListarMinhas'
+
+/**
+ * Rota para recurso de Cadastrar Presencas
+ */
+export const presencesEventResource = '/PresencasEvento'
+
+// Rota para Comentario
+export const commentsResource = '/ComentariosEvento';
 
 //Mudar apiPort e localApiUri
 const apiPort = '7118';
