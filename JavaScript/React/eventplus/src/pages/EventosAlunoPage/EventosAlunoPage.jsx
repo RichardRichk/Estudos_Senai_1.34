@@ -33,6 +33,8 @@ const EventosAlunoPage = () => {
   // recupera os dados globais do usuário
   const { userData, setUserData } = useContext(UserContext);
   const [comentario, setComentario] = useState("");
+  
+  const [idComentario, setIdComentario] = useState();
 
   useEffect(() => {
     
@@ -102,6 +104,7 @@ const EventosAlunoPage = () => {
     const retorno = await api.get(`${commentsResource}/BuscarPorIdUsuario?idUsuario=${idUsuario}&idEvento=${idEvento}`);
 
     setComentario(retorno.data.descricao);
+    setIdComentario(retorno.data.idComentarioEvento)
   }
 
   const verificaPresenca = (arrayAllEvents, eventsUser) => {
@@ -125,10 +128,6 @@ const EventosAlunoPage = () => {
     setUserData({...userData, idEvento: idEvento})
   };
 
-  const commentaryRemove = (userId) => {
-    alert("Remover o comentário");
-  };
-
   const newCommentary = async (descricao, idUsuario, idEvento) => {
     try {
 
@@ -141,12 +140,26 @@ const EventosAlunoPage = () => {
 
       if (promise.status === 200) {
         loadMyComentary(idUsuario, idEvento);
-      }
+      };
 
     } catch (error) {
       alert("Erro")
     }
   }
+
+  // remove o comentário
+  async function commentaryRemove() {
+
+    try {
+        const request = await api.delete(`${commentsResource}/${idComentario}`)
+
+        setComentario("Comentário Deletado!")
+
+    } catch (error) {
+
+    }
+
+};
 
   async function handleConnect(eventId, whatTheFunction, presencaId = null) {
     if (whatTheFunction === "connect") {
