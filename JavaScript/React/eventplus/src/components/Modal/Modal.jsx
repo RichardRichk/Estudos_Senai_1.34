@@ -59,7 +59,7 @@ const Modal = ({
           }}
 
         />
-        {comentarioDesc}
+        
 
         <Button
           textButton="Comentar"

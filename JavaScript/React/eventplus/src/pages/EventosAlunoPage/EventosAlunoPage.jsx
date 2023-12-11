@@ -44,7 +44,7 @@ const EventosAlunoPage = () => {
 
   async function loadEvents(){
 
-    // setEventos([]);
+    setEventos([]);
 
     if (tipoEvento === "1") {//Todos os eventos
 
@@ -139,7 +139,10 @@ const EventosAlunoPage = () => {
       });
 
       if (promise.status === 200) {
-        loadMyComentary(idUsuario, idEvento);
+        const retorno = await api.get(`${commentsResource}/BuscarPorIdUsuario?idUsuario=${idUsuario}&idEvento=${idEvento}`);
+
+        setComentario(retorno.data.descricao);
+        setIdComentario(retorno.data.idComentarioEvento)
       };
 
     } catch (error) {
@@ -161,8 +164,8 @@ const EventosAlunoPage = () => {
 
 };
 
-  async function handleConnect(eventId, whatTheFunction, presencaId = null) {
-    if (whatTheFunction === "connect") {
+  async function handleConnect(eventId, situacao, presencaId = null) {
+    if (situacao === "connect") {
 
       try {//CONNECT
         const retorno = await api.post(presencesEventResource, {

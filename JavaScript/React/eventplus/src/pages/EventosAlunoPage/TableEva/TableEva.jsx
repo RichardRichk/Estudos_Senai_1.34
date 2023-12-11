@@ -75,7 +75,7 @@ const Table = ({ dados, fnConnect = null, fnShowModal = null }) => {
                     fnConnect
                     (e.idEvento, 
                       e.situacao ? "unconnect" : "connect",
-                        e.situacao ? e.idPresencaEvento: null//parametro opcional
+                      e.idPresencaEvento
                     )
                   }}
                 />
