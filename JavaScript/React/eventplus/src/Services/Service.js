@@ -43,12 +43,12 @@ export const presencesEventResource = '/PresencasEvento'
 export const commentsResource = '/ComentariosEvento';
 
 //Mudar apiPort e localApiUri
-const apiPort = '7118';
-const localApiUri = `https://localhost:${apiPort}/api`;
-const externalApiUri = null;
+// const apiPort = '7118';
+// const localApiUri = `https://localhost:${apiPort}/api`;
+const externallApiUri = `https://eventwebapi-richard.azurewebsites.net/api`;
 
 const api = axios.create({
-    baseURL:localApiUri
+    baseURL: externallApiUri
 });
 
 export default api;
