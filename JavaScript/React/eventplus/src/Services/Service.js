@@ -15,6 +15,11 @@ export const eventsResource = '/Evento'
 export const nextEventResource = '/Evento/ListarProximos'
 
 /**
+ *  Rota para o recurso antigos eventos
+ */
+export const oldEventResource = '/Evento/ListarAntigos'
+
+/**
  *  Rota para o recurso tipos eventos
  */
 export const eventsTypeResource = '/TiposEvento'

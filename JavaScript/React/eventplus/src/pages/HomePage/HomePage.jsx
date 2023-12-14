@@ -7,11 +7,12 @@ import VisionSection from '../../components/VisionSection/VisionSection';
 import ContactSection from '../../components/ContactSection/ContactSection';
 import Container from '../../components/Container/Container';
 import NextEvent from '../../components/NextEvent/NextEvent';
+import OldEvent from '../../components/OldEvent/OldEvent';
 import Notification from '../../components/Notification/Notification';
 
 import api from '../../Services/Service';
 
-import { nextEventResource } from '../../Services/Service';
+import { nextEventResource, oldEventResource } from '../../Services/Service';
 
 const HomePage = () => {
 
@@ -19,25 +20,47 @@ const HomePage = () => {
 
     const [nextEvents, setNextEvents] = useState([]); //dados mocados
 
-    useEffect(() => {
-        async function getNextEvents() {
-            try {
-                const promise = await api.get(`${nextEventResource}`);
-                const dados = await promise.data;
+    const [oldEvents, setOldEvents] = useState([]);
 
-                setNextEvents(dados)//Atualiza o state
-            } catch (error) {
-                setNotifyerUser({
-                    titleNote: "Erro na API",
-                    textNote: `Nao foi possivel carregar os proximos evento... Verifique a sua conexao com a internet`,
-                    imgIcon: "warning",
-                    imgAlt: "Imagem de ilustracai de erro, Cuidado!",
-                    showMessage: true
-                });
-            }
+
+    async function getNextEvents() {
+        try {
+            const promise = await api.get(`${nextEventResource}`);
+            const dados = await promise.data;
+
+            setNextEvents(dados)//Atualiza o state
+        } catch (error) {
+            setNotifyerUser({
+                titleNote: "Erro na API",
+                textNote: `Nao foi possivel carregar os proximos evento... Verifique a sua conexao com a internet`,
+                imgIcon: "warning",
+                imgAlt: "Imagem de ilustracai de erro, Cuidado!",
+                showMessage: true
+            });
         }
+    }
+
+    async function getOldEvents() {
+        try {
+            const promise = await api.get(`${oldEventResource}`);
+            const dados = await promise.data;
+
+            setOldEvents(dados)//Atualiza o state
+        } catch (error) {
+            setNotifyerUser({
+                titleNote: "Erro na API",
+                textNote: `Nao foi possivel carregar os Antigos evento... Verifique a sua conexao com a internet`,
+                imgIcon: "warning",
+                imgAlt: "Imagem de ilustracai de erro, Cuidado!",
+                showMessage: true
+            });
+        }
+    }
 
 
+    useEffect(() => {
+
+        getOldEvents();
         getNextEvents();//roda a funcao
     },[]);
 
@@ -64,6 +87,26 @@ const HomePage = () => {
                                 nextEvents.map((e) => {
                                     return (
                                     <NextEvent 
+                                    key={e.idEvento}
+                                    title={e.nomeEvento}
+                                    decription={e.descricao}
+                                    eventDate={e.dataEvento}
+                                    idEvent ={e.idEvento}
+                                    />
+                                    );
+                                })
+                            }
+
+                        </div>
+
+                        <Title titleText={"Eventos Concluidos"}/>
+
+                        <div className='events-box'>
+
+                            {
+                                oldEvents.map((e) => {
+                                    return (
+                                    <OldEvent 
                                     key={e.idEvento}
                                     title={e.nomeEvento}
                                     decription={e.descricao}

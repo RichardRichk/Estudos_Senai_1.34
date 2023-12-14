@@ -32,17 +32,21 @@ const Nav = ({ exibeNavbar, setExibeNavbar }) => {
                 
                 <Link to="/" className='navbar__item'>Home</Link> {/* Link para a página inicial */}
 
-                {userData.nome && userData.role === "ADM" ? (
+                {userData.nome && userData.role === "Administrador" ? (
 
                     <>
                         <Link to="/tipo-eventos" className='navbar__item'>Tipos de Evento</Link> {/* Link para a página de tipos de evento */}
                         <Link to="/eventos" className='navbar__item'>Eventos</Link> {/* Link para a página de eventos */}
+                        <Link to="/detalhes-evento" className='navbar__item'>Detalhes Evento</Link> {/* Link para a página de detalhes-eventos */}
                     </>
 
                 // <Link to="/testes" className='navbar__item'>Teste</Link> {/* Link para a página de testes */}
-                ) : userData.nome && userData.role === "Cliente" ? (
+                ) : userData.nome && userData.role === "Comum" ? (
+                    <>
+                    <Link to="/eventos-aluno" className='navbar__item'>Eventos Alunos</Link> {/* Link para a página de eventos */}
 
-                    <Link to="/eventos-aluno" className='navbar__item'>Eventos Alunos</Link> /* Link para a página de eventos */
+                    <Link to="/detalhes-evento" className='navbar__item'>Detalhes Evento</Link> {/* Link para a página de detalhes-eventos */}
+                    </>
 
                 ): null}
 

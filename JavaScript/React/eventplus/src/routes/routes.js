@@ -9,6 +9,7 @@ import LoginPage from '../pages/LoginPage/LoginPage';
 import TipoEventos from '../pages/TipoEventosPage/TipoEventosPage';
 import { PrivateRoute } from './PrivateRoutes';
 import EventosAlunoPage from '../pages/EventosAlunoPage/EventosAlunoPage';
+import DetalhesEvento from '../pages/DetalhesEvento/DetalhesEvento';
 
 const routes = () => {
     return (
@@ -19,6 +20,8 @@ const routes = () => {
                     <Route path="/" element={<HomePage />} exact />
 
                     <Route path="/login" element={<LoginPage />} />
+
+                    <Route path='/detalhes-evento/:idEvento' element={<DetalhesEvento/>} />
 
                     <Route
                         path="/tipo-eventos"

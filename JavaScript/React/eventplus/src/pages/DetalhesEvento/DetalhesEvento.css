@@ -1,0 +1,10 @@
+.detalhes-evento-section, .lista-comentarios-section{
+    padding: 50px 0;
+ }
+
+.lista-comentarios-section {
+    background-color: var(--color-red);
+    width: 100%;
+    padding-bottom: 50px;
+    overflow: auto;
+}
