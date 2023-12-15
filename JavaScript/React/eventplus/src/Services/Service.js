@@ -47,6 +47,10 @@ export const presencesEventResource = '/PresencasEvento'
 // Rota para Comentario
 export const commentsResource = '/ComentariosEvento';
 
+// Rota para Comentario
+export const commentsTrueResource = '/ComentariosEvento/ListarSomenteExibe';
+
+
 //Mudar apiPort e localApiUri
 // const apiPort = '7118';
 // const localApiUri = `https://localhost:${apiPort}/api`;

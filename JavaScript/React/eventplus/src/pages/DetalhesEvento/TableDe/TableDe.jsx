@@ -1,8 +1,9 @@
 import React from "react";
 import "./TableDe.css"
 
-const TableDe = () => {
-
+const TableDe = (dadosComent) => {
+    
+    console.log(dadosComent);
     return (
         <table className='table-data'>
 
@@ -15,14 +16,18 @@ const TableDe = () => {
             </thead>
             {/* Corpo */}
             <tbody>
-                <tr className="table-data__head-row">
-                    <td className="table-data__data table-data__data--little">
-                        <p>Usuario</p>
-                    </td>
-                    <td className="table-data__data table-data__data--little">
-                        <p>Comentario</p>
-                    </td>
-                </tr>
+                {dadosComent.map((coment) => (
+                    <tr key={coment.id} className="table-data__head-row">
+                        <td className="table-data__data table-data__data--little">
+                            <p>{coment.usuario.nome}</p>
+                            
+                        </td>
+                        <td className="table-data__data table-data__data--little">
+                            <p>{coment.descricao}</p>
+                        </td>
+                    </tr>
+                ))}
+
             </tbody>
         </table>
     );
