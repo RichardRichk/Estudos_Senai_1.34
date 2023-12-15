@@ -1,124 +1,122 @@
-    import React, { Fragment, useEffect, useState, useContext } from 'react';
-    import "./DetalhesEvento.css"
+import React, { Fragment, useEffect, useState, useContext } from 'react';
+import "./DetalhesEvento.css"
 
-    import Title from '../../components/Titulo/Titulo';
-    import MainContent from '../../components/Main/MainContent.jsx'
-    import Container from '../../components/Container/Container';
+import Title from '../../components/Titulo/Titulo';
+import MainContent from '../../components/Main/MainContent.jsx'
+import Container from '../../components/Container/Container';
 
-    import TableDe from './TableDe/TableDe';
-    import { useParams } from 'react-router-dom';
-    import { UserContext } from '../../context/AuthContext';
+import TableDe from './TableDe/TableDe';
+import { useParams } from 'react-router-dom';
+import { UserContext } from '../../context/AuthContext';
 
-    import api, {eventsResource, commentsResource, commentsTrueResource} from "../../Services/Service"
+import api, { eventsResource, commentsResource, commentsTrueResource } from "../../Services/Service"
 
-    const DetalhesEvento = () => {
+const DetalhesEvento = () => {
 
-        const { userData } = useContext(UserContext);
+    const { userData } = useContext(UserContext);
 
-        const {idEvento} = useParams();
+    const { idEvento } = useParams();
 
-        const [evento, setEvento] = useState([]);
+    const [evento, setEvento] = useState([]);
 
-        const [comentarios, setComentarios] = useState([]);
+    const [comentarios, setComentarios] = useState([]);
 
-        async function loadEvent(){
-            try {
-                const promise = await api.get(`${eventsResource}/${idEvento}`);
-                setEvento(promise.data);
+    async function loadEvent() {
+        try {
+            const promise = await api.get(`${eventsResource}/${idEvento}`);
+            setEvento(promise.data);
 
-            } catch (error) {
-                console.log("Erro na api");
-                console.log(error);
-            }
+        } catch (error) {
+            console.log("Erro na api");
+            console.log(error);
         }
+    }
 
-        async function loadAllComentary() {
-            try {
-                const promise = await api.get(`${commentsResource}`)
+    async function loadAllComentary() {
+        try {
+            const promise = await api.get(`${commentsResource}`)
 
-                setComentarios(promise.data);
-                console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaa777");
-                console.log(promise.data);
-            } catch (error) {
-                console.log("Erro na api");
-                console.log(error);
-            }
+            setComentarios(promise.data);
+        } catch (error) {
+            console.log("Erro na api");
+            console.log(error);
         }
+    }
 
-        async function loadTrueComentary() {
-            try {
-                const promise = await api.get(`${commentsTrueResource}`)
+    async function loadTrueComentary() {
+        try {
+            const promise = await api.get(`${commentsTrueResource}`)
+            setComentarios(promise.data);
 
-                setComentarios(promise.data);
-                console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaa");
-                console.log(promise.data);
-            } catch (error) {
-                console.log("Erro na api");
-                console.log(error);
-            }
+        } catch (error) {
+            console.log("Erro na api");
+            console.log(error);
         }
+    }
 
-        function loadComentaryByUser() {
-            return (
-                <>
-                    {userData.nome && userData.role === "Administrador" ? (
-                        loadAllComentary()
-                    ) : userData.nome && userData.role === "Comum" ? (
-                        loadTrueComentary()
-                    ) : null}
-                </>
-            );
+    function loadComentaryByUser() {
+        if (userData.nome && userData.role === "Administrador") {
+            loadAllComentary()
+        } else if(userData.nome && userData.role === "Comum"){
+            loadTrueComentary()
         }
-        
+    }
 
 
-        useEffect(()=>{
-            loadEvent();
-            
-            loadComentaryByUser();
-        }, []);
 
-        return (
-            <>
+    useEffect(() => {
+        loadEvent();
+
+        loadComentaryByUser();
+    }, []);
+
+    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+    console.log(comentarios);
+
+    return (
+        <>
             <MainContent>
                 <section className="detalhes-evento-section">
-                        <Container>
+                    <Container>
 
-                            <div className="detalhes-evento__box">     
+                        <div className="detalhes-evento__box">
 
-                                <Title titleText={evento.nomeEvento}/>
-                                <>
-                                <h1>Descricao</h1>
+                            <Title titleText={evento.nomeEvento} />
+                            <div className='left-items'>
+                                <h1 className='item'>Descricao</h1>
                                 <p>{evento.descricao}</p>
-                                
-                                <h1>dataEvento</h1>
-                                <p>{new Date(evento.dataEvento).toLocaleDateString()}</p>
-                                
-                                <h1>TipoEvento</h1>
-                                
-                                <p>Undefined</p>
-                                
-                                <h1>Instituicao</h1>
-                                <p>Undefined</p>
-                                </>
 
+
+                                <h1 className='item'>dataEvento</h1>
+                                <p>{new Date(evento.dataEvento).toLocaleDateString()}</p>
                             </div>
-                        </Container>
+
+                            <div className='right-items'>
+                                <h1 className='item'>TipoEvento</h1>
+
+                                <p>{evento.tiposEvento?.titulo}</p>
+
+                                <h1 className='item'>Instituicao</h1>
+                                <p>{evento.instituicao?.nomeFantasia}</p>
+                            </div>
+
+                        </div>
+                    </Container>
                 </section>
 
                 {/* Listagem de comentarios */}
                 <section className='lista-comentarios-section'>
-                        <Container>
-                            <Title titleText={"Comentarios"} color="white"/>
+                    <Container>
+                        <Title titleText={"Comentarios"} color="white" />
 
-                            <TableDe
-                                dadosComent={comentarios}
-                            />
-                        </Container>
+                        <TableDe
+                            dadosComent={comentarios}
+                        />
+                    </Container>
                 </section>
             </MainContent>
-            </>
-        );
-    };
+        </>
+    );
+};
 
-    export default DetalhesEvento;
+export default DetalhesEvento;

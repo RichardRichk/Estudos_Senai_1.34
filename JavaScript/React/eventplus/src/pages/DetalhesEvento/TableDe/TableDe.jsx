@@ -16,17 +16,16 @@ const TableDe = (dadosComent) => {
             </thead>
             {/* Corpo */}
             <tbody>
-                {dadosComent.map((coment) => (
+                {/* {dadosComent.map((coment) => (
                     <tr key={coment.id} className="table-data__head-row">
                         <td className="table-data__data table-data__data--little">
                             <p>{coment.usuario.nome}</p>
-                            
                         </td>
                         <td className="table-data__data table-data__data--little">
                             <p>{coment.descricao}</p>
                         </td>
                     </tr>
-                ))}
+                ))} */}
 
             </tbody>
         </table>
